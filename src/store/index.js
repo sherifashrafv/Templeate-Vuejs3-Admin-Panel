@@ -1,5 +1,5 @@
 import { createStore } from "vuex";
-
+import router from "../router/index";
 export default createStore({
   state: {
     mens: [],
@@ -24,16 +24,18 @@ export default createStore({
       // qP that Mean Quantity for each Product
       if (!qP) {
         state.basketCart.push(product);
-        localStorage.setItem(
-          "basketCartData",
-          JSON.stringify(state.basketCart)
-        );
+        localStorage.setItem("basketCart", JSON.stringify(state.basketCart));
       } else {
         qP.quantity++;
-        localStorage.setItem(
-          "basketCartData",
-          JSON.stringify(state.basketCart)
-        );
+        localStorage.setItem("basketCart", JSON.stringify(state.basketCart));
+      }
+    },
+    redrectTo(state, payload) {
+      router.push({ name: payload });
+    },
+    dataCart: (state) => {
+      if (localStorage.getItem("dataBasketCart")) {
+        state.basketCart = JSON.parse(localStorage.getItem("dataBasketCart"));
       }
     },
   },
@@ -50,6 +52,9 @@ export default createStore({
     async addToCart({ commit }, payload) {
       localStorage.setItem("basketCart", JSON.stringify(payload));
       await commit("basketCart", payload);
+    },
+    redirTo({ commit }, payload) {
+      commit("redrectTo", payload.val);
     },
   },
   modules: {},

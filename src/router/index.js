@@ -4,6 +4,8 @@ import about from "../views/AboutView.vue";
 import ForAll from "../components/Products/Men.vue";
 import Women from "../components/Products/Women.vue";
 import ProdId from "../components/Products/Single.vue";
+import Register from "../components/Register/Register.vue";
+import Login from "../components/Login/login.vue";
 const routes = [
   {
     path: "/",
@@ -20,11 +22,6 @@ const routes = [
         path: "women",
         component: Women,
       },
-      {
-        name: "ProdId",
-        path: "/products:id",
-        component: ProdId,
-      },
     ],
   },
   {
@@ -35,6 +32,27 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: about,
     // meta: { layout: "custome" },
+  },
+  {
+    name: "ProdId",
+    path: "/products:id",
+    component: ProdId,
+  },
+  {
+    name: "Register",
+    path: "/Register",
+    component: Register,
+    meta: {
+      layout: "custome",
+    },
+  },
+  {
+    name: "Login",
+    path: "/Login",
+    component: Login,
+    meta: {
+      layout: "custome",
+    },
   },
 ];
 

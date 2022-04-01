@@ -1,58 +1,89 @@
 {
+  "users": [
+    {
+      "email": "s@yahoo.com",
+      "password": "01123456789",
+      "username": "sherif",
+      "lastName": "ashrafa",
+      "address": "Elmansoura/minyat-elnasr",
+      "city": "1",
+      "phone": "01129706441",
+      "id": 1
+    },
+    {
+      "email": "s@yahoo.com",
+      "password": "01123456789",
+      "username": "sherif",
+      "lastName": "ashrafa",
+      "address": "Elmansoura/minyat-elnasr",
+      "city": "1",
+      "phone": "01129706441",
+      "id": 2
+    }
+  ],
   "men": [
     {
       "id": 1,
       "title": "Round Neck T-Shirt",
       "price": 27,
-      "img": "https://loopinfosol.in/themeforest/ekka-html-v31/ekka-html/assets/images/product-image/6_1.jpg"
+      "img": "https://loopinfosol.in/themeforest/ekka-html-v31/ekka-html/assets/images/product-image/6_1.jpg",
+      "quantity": 1
     },
     {
       "id": 2,
       "title": "Round Neck T-Shirt",
       "price": 27,
-      "img": "https://loopinfosol.in/themeforest/ekka-html-v31/ekka-html/assets/images/product-image/7_2.jpg"
+      "img": "https://loopinfosol.in/themeforest/ekka-html-v31/ekka-html/assets/images/product-image/7_2.jpg",
+      "quantity": 1
     },
     {
       "id": 3,
       "title": "Round Neck T-Shirt",
       "price": 27,
-      "img": "https://loopinfosol.in/themeforest/ekka-html-v31/ekka-html/assets/images/product-image/1_2.jpg"
+      "img": "https://loopinfosol.in/themeforest/ekka-html-v31/ekka-html/assets/images/product-image/1_2.jpg",
+      "quantity": 1
     },
     {
       "id": 5,
       "title": "Round Neck T-Shirt",
       "price": 27,
-      "img": "https://loopinfosol.in/themeforest/ekka-html-v31/ekka-html/assets/images/product-image/1_2.jpg"
+      "img": "https://loopinfosol.in/themeforest/ekka-html-v31/ekka-html/assets/images/product-image/1_2.jpg",
+      "quantity": 1
     },
     {
       "id": 6,
       "title": "Round Neck T-Shirt",
       "price": 27,
-      "img": "https://loopinfosol.in/themeforest/ekka-html-v31/ekka-html/assets/images/product-image/1_2.jpg"
+      "img": "https://loopinfosol.in/themeforest/ekka-html-v31/ekka-html/assets/images/product-image/1_2.jpg",
+      "quantity": 1
     },
     {
       "id": 7,
       "title": "Round Neck T-Shirt",
       "price": 27,
-      "img": "https://loopinfosol.in/themeforest/ekka-html-v31/ekka-html/assets/images/product-image/1_2.jpg"
+      "img": "https://loopinfosol.in/themeforest/ekka-html-v31/ekka-html/assets/images/product-image/1_2.jpg",
+      "quantity": 1
     },
     {
       "id": 8,
       "title": "Round Neck T-Shirt",
       "price": 27,
-      "img": "https://loopinfosol.in/themeforest/ekka-html-v31/ekka-html/assets/images/product-image/1_2.jpg"
+      "img": "https://loopinfosol.in/themeforest/ekka-html-v31/ekka-html/assets/images/product-image/1_2.jpg",
+      "quantity": 1
     },
     {
       "id": 9,
       "title": "Round Neck T-Shirt",
       "price": 27,
-      "img": "https://loopinfosol.in/themeforest/ekka-html-v31/ekka-html/assets/images/product-image/1_2.jpg"
+      "img": "https://loopinfosol.in/themeforest/ekka-html-v31/ekka-html/assets/images/product-image/1_2.jpg",
+      "quantity": 1
     },
     {
       "id": 10,
       "title": "Round Neck T-Shirt",
       "price": 27,
-      "img": "https://loopinfosol.in/themeforest/ekka-html-v31/ekka-html/assets/images/product-image/1_2.jpg"
+      "img": "https://loopinfosol.in/themeforest/ekka-html-v31/ekka-html/assets/images/product-image/1_2.jpg",
+      "quantity": 1
     }
   ],
   "collection": [
@@ -60,28 +91,32 @@
       "id": 11,
       "title": "Baby Toy Teddybear",
       "price": 27,
-      "img": "https://loopinfosol.in/themeforest/ekka-html-v31/ekka-html/assets/images/product-image/1_1.jpg"
+      "img": "https://loopinfosol.in/themeforest/ekka-html-v31/ekka-html/assets/images/product-image/1_1.jpg",
+      "quantity": 1
     },
     {
       "id": 12,
       "title": "Leather Purse For Women",
       "price": 27,
       "img": "https://loopinfosol.in/themeforest/ekka-html-v31/ekka-html/assets/images/product-image/3_1.jpg",
-      "booking": 12
+      "booking": 12,
+      "quantity": 1
     },
     {
       "id": 13,
       "title": "Round Neck T-Shirt",
       "price": 27,
       "img": "https://loopinfosol.in/themeforest/ekka-html-v31/ekka-html/assets/images/product-image/8_1.jpg",
-      "booking": 10
+      "booking": 10,
+      "quantity": 1
     },
     {
       "id": 14,
       "title": "Casual Shoes Men",
       "price": 27,
       "img": "https://loopinfosol.in/themeforest/ekka-html-v31/ekka-html/assets/images/product-image/10_1.jpg",
-      "booking": 5
+      "booking": 5,
+      "quantity": 1
     }
   ],
   "usersTestimonies": [

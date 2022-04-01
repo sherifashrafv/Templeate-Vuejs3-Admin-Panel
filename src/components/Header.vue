@@ -1,5 +1,5 @@
 <template>
-  <div class="navbar-main w-100 p-3">
+  <div class="navbar-main w-100 pe-3 pt-3 pb-0">
     <!-- icons -->
     <div class="section-1 border-bottom">
       <div class="container">
@@ -100,9 +100,15 @@
                     class="dropdown-menu"
                     aria-labelledby="dropdownMenuButton1"
                   >
-                    <li><a class="dropdown-item" href="#">Action</a></li>
                     <li>
-                      <a class="dropdown-item" href="#">Another action</a>
+                      <router-link class="dropdown-item" to="/Register"
+                        >Register</router-link
+                      >
+                    </li>
+                    <li>
+                      <router-link class="dropdown-item" to="/login"
+                        >Login</router-link
+                      >
                     </li>
                     <li>
                       <a class="dropdown-item" href="#">Something else here</a>
@@ -110,8 +116,74 @@
                   </ul>
                 </div>
               </li>
+
               <li>
-                <div class="dropdown">
+                <!-- Button trigger modal -->
+                <!-- Drawer Style Right Modal -->
+                <!-- modal-shoopping -->
+                <!-- Button trigger modal -->
+                <button
+                  type="button"
+                  class="modal-shoopping"
+                  data-bs-toggle="modal"
+                  data-bs-target="#exampleModal"
+                >
+                  <img
+                    src="../../public/Images/Header/shopping-bag.png"
+                    alt=""
+                  />
+                </button>
+
+                <!-- Modal -->
+                <div
+                  class="modal fade"
+                  id="exampleModal"
+                  tabindex="-1"
+                  aria-labelledby="exampleModalLabel"
+                  aria-hidden="true"
+                >
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">
+                          My Cart
+                        </h5>
+                        <button
+                          type="button"
+                          class="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                        ></button>
+                      </div>
+                      <div class="modal-body">
+                        <div
+                          class="basket-cart-products d-flex align-items-center flex-row"
+                          v-for="prod in basketCart"
+                          :key="prod.id"
+                        >
+                          <div class="prod-image">
+                            <img :src="prod.img" alt="" />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button
+                          type="button"
+                          class="btn btn-secondary"
+                          data-bs-dismiss="modal"
+                        >
+                          Close
+                        </button>
+                        <button type="button" class="btn btn-primary">
+                          Save changes
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- End Drawer Style Right Modal -->
+
+                <!-- <div class="dropdown">
                   <button
                     class="btn btn-secondary dropdown-toggle"
                     type="button"
@@ -139,7 +211,7 @@
                       <a class="dropdown-item" href="#">Something else here</a>
                     </li>
                   </ul>
-                </div>
+                </div> -->
               </li>
 
               <li>
@@ -173,7 +245,7 @@
       </div>
     </div>
     <!-- section-2 -->
-    <div class="mt-3 border-bottom">
+    <div class="border-bottom p-3">
       <ul
         class="router-links list-unstyled justify-content-center d-flex gap-5 flex-row"
       >
@@ -257,8 +329,10 @@ button#dropdownMenuButton1 {
   background: #f7f7f7;
   text-align: center;
 }
-.shopy-icons div button img {
+.shopy-icons div button img,
+button.modal-shoopping img {
   max-width: 30px;
+  border: none;
 }
 .shopy-icons div button::after {
   display: none;
@@ -290,11 +364,32 @@ a.router-link-active {
 a.router-link-active.router-link-exact-active::after {
   content: "";
   position: absolute;
-  bottom: -90%;
+  bottom: -86%;
   left: 0;
   background: #3474d4;
   width: 100%;
   height: 3px;
+  z-index: 333333;
+}
+a {
+  position: relative;
+}
+a::before {
+  content: "";
+  position: absolute;
+  bottom: -86%;
+  left: 0;
+  background: #3474d4;
+  width: 100%;
+  height: 3px;
+  z-index: 333333;
+  transform-origin: 0 0;
+  transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
+  transform: scaleX(0);
+  transition: transform 0.5s;
+}
+a:hover::before {
+  transform: scaleX(1);
 }
 a {
   color: black;
@@ -309,5 +404,76 @@ a {
   z-index: 555555;
   top: 0;
   transform: scale(1, 1);
+}
+
+.modal-dialog {
+  position: absolute;
+  right: 0;
+  width: 100%;
+  top: 0;
+  margin: 0;
+  height: 100vh;
+}
+.modal-content {
+  height: 100vh;
+}
+.modal.fade {
+  transition: 0.3s ease-in-out;
+  transform: translateX(20%) !important;
+}
+.modal.fade.show {
+  transform: translateX(0%) !important;
+}
+
+.modal-shoopping {
+  background: none;
+  border: none;
+}
+/* Modal Box */
+/* .right .modal-dialog,
+.left .modal-dialog {
+  transition: transform 0.25s ease-out;
+  position: fixed;
+  margin: auto;
+  height: 100vh;
+}
+.modal.right .modal-content,
+.modal.left .modal-content {
+  border-radius: 0;
+  border: none;
+  height: 100%;
+}
+.right .modal-dialog {
+  transform: translateX(0) !important;
+  right: 0;
+}
+.left .modal-dialog {
+  transform: translateX(-50px) !important;
+  left: 0;
+} */
+.shopping-image img {
+  max-width: 90px;
+}
+.quantity {
+  width: 100px;
+  border: 1px solid #eeeeee;
+}
+.quantity > div {
+  width: calc(100% / 3);
+}
+.prod-image img {
+  width: 100px;
+}
+.modal-backdrop {
+  z-index: 1040 !important;
+}
+.modal-content {
+  margin: 2px auto;
+  z-index: 1100 !important;
+  overflow-y: scroll;
+}
+.modal-backdrop {
+  /* bug fix - no overlay */
+  display: none;
 }
 </style>
