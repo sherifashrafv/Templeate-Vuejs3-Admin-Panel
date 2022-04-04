@@ -5,7 +5,7 @@
         <div class="spinner-border"></div>
       </div>
       <div v-else class="row justify-content-center gy-2">
-        <div v-for="prod in mens" class="cards col-lg-3" :key="prod.id">
+        <div v-for="prod in posts" class="cards col-lg-3" :key="prod.id">
           <div class="card position-relative">
             <img :src="prod.img" class="card-img-top" alt="..." />
             <div class="card-body">
@@ -59,6 +59,11 @@ import { ref } from "@vue/reactivity";
 import StarRating from "vue-star-rating";
 export default {
   name: "Kids-vue",
+  data() {
+    return {
+      posts: [],
+    };
+  },
   setup() {
     const loading = ref(true);
     return { loading };
@@ -68,8 +73,9 @@ export default {
   },
   async mounted() {
     await axios
-      .get("/men")
+      .get("men")
       .then((res) => {
+        this.posts = res.data;
         this.$store.commit("getMenProduct", res.data);
       })
       .catch((error) => console.log(error))

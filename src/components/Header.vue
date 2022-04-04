@@ -1,10 +1,11 @@
 <template>
-  <div class="navbar-main w-100 pe-3 pt-3 pb-0">
+  <div class="navbar-main">
     <!-- icons -->
-    <div class="section-1 border-bottom">
-      <div class="container">
+
+    <div class="section-1 border-bottom p-2">
+      <div class="container-lg container-fluid-md">
         <div class="d-flex align-items-center flex-row justify-content-between">
-          <div>
+          <div class="d-lg-block d-md-none d-sm-none">
             <ul
               class="d-flex list-unstyled flex-row justify-content-between gap-2 links-icons"
             >
@@ -14,16 +15,18 @@
               <li><i class="fa-brands fa-linkedin-in"></i></li>
             </ul>
           </div>
-          <div>
+
+          <div class="free-shopping">
             <span class="text-center"
               >Free Shipping This Week Order Over - $75
             </span>
           </div>
-          <div>
+
+          <div class="d-lg-block d-md-none d-sm-none">
             <div
               class="d-flex list-unstyled flex-row justify-content-between gap-2 links-icons"
             >
-              <div class="dropdown">
+              <div class="dropdown languages">
                 <button
                   class="btn btn-secondary text-muted dropdown-toggle"
                   type="button"
@@ -31,43 +34,250 @@
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
-                  Dropdown button
+                  {{ $t("languages.title") }}
                 </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                <ul
+                  class="dropdown-menu p-2"
+                  aria-labelledby="dropdownMenuButton1"
+                >
                   <li>
-                    <a class="dropdown-item" href="#">Something else here</a>
+                    <a @click="change('en')" class="dropdown-item">{{
+                      $t("languages.english")
+                    }}</a>
                   </li>
-                </ul>
-              </div>
-              <div class="dropdown">
-                <button
-                  class="btn btn-secondary text-muted dropdown-toggle"
-                  type="button"
-                  id="dropdownMenuButton1"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Dropdown button
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
                   <li>
-                    <a class="dropdown-item" href="#">Something else here</a>
+                    <a @click="change('ar')" class="dropdown-item">{{
+                      $t("languages.arabic")
+                    }}</a>
                   </li>
                 </ul>
               </div>
             </div>
           </div>
+
+          <!-- start-icons-media-queries -->
+          <div class="shopy-icons-div w-100 d-lg-none d-md-block">
+            <ul
+              class="list-unstyled shopy-icons justify-content-end query align-items-center d-flex flex-row position-relative m-0"
+            >
+              <li>
+                <div class="dropdown">
+                  <button
+                    class="btn btn-secondary dropdown-toggle"
+                    type="button"
+                    id="dropdownMenuButton1"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <img src="/img/avatar.4ce946d7.png" alt="" />
+                  </button>
+                  <ul
+                    class="dropdown-menu"
+                    aria-labelledby="dropdownMenuButton1"
+                  >
+                    <li>
+                      <a href="/Register" class="dropdown-item">Register</a>
+                    </li>
+                    <li>
+                      <a href="/login" class="dropdown-item">Login</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  class="modal-shoopping query"
+                  data-bs-toggle="modal"
+                  data-bs-target="#exampleModal"
+                >
+                  <img src="/img/shopping-bag.83beee9f.png" alt="" /><span
+                    class="basket-cart-num"
+                    >0</span
+                  ></button
+                ><!-- Modal -->
+                <div
+                  class="modal fade"
+                  id="exampleModal"
+                  tabindex="-1"
+                  aria-labelledby="exampleModalLabel"
+                  aria-hidden="true"
+                >
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">
+                          My Cart
+                        </h5>
+                        <button
+                          type="button"
+                          class="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                        ></button>
+                      </div>
+                      <div class="modal-body"></div>
+                      <div class="modal-footer">
+                        <button
+                          type="button"
+                          class="btn btn-secondary"
+                          data-bs-dismiss="modal"
+                        >
+                          Close</button
+                        ><button type="button" class="btn btn-primary">
+                          Save changes
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- End Drawer Style Right Modal --><!-- <div class="dropdown">
+                  <button
+                    class="btn btn-secondary dropdown-toggle"
+                    type="button"
+                    id="dropdownMenuButton1"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <img
+                      src="../../public/Images/Header/shopping-bag.png"
+                      alt=""
+                    />
+                    <span class="basket-cart"
+                      ><strong>{{ basketCart.length }}</strong></span
+                    >
+                  </button>
+                  <ul
+                    class="dropdown-menu"
+                    aria-labelledby="dropdownMenuButton1"
+                  >
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li>
+                      <a class="dropdown-item" href="#">Another action</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                    </li>
+                  </ul>
+                </div> -->
+              </li>
+              <li>
+                <div class="dropdown">
+                  <button
+                    class="btn btn-secondary dropdown-toggle"
+                    type="button"
+                    id="dropdownMenuButton1"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <img src="/img/heart.368c1bc7.png" alt="" />
+                  </button>
+                  <ul
+                    class="dropdown-menu"
+                    aria-labelledby="dropdownMenuButton1"
+                  >
+                    <li>
+                      <a class="dropdown-item" href="#">Action</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">Another action</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="menu">
+                <button
+                  type="button"
+                  class="modal-shoopping query"
+                  data-bs-toggle="modal"
+                  data-bs-target="#exampleModal"
+                >
+                  <img
+                    src="../../public/Images/Header/menu.png"
+                    alt=""
+                  /></button
+                ><!-- Modal -->
+                <div
+                  class="modal fade"
+                  id="exampleModal"
+                  tabindex="-1"
+                  aria-labelledby="exampleModalLabel"
+                  aria-hidden="true"
+                >
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">
+                          My Cart
+                        </h5>
+                        <button
+                          type="button"
+                          class="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                        ></button>
+                      </div>
+                      <div class="modal-body"></div>
+                      <div class="modal-footer">
+                        <button
+                          type="button"
+                          class="btn btn-secondary"
+                          data-bs-dismiss="modal"
+                        >
+                          Close</button
+                        ><button type="button" class="btn btn-primary">
+                          Save changes
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- End Drawer Style Right Modal --><!-- <div class="dropdown">
+                  <button
+                    class="btn btn-secondary dropdown-toggle"
+                    type="button"
+                    id="dropdownMenuButton1"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <img
+                      src="../../public/Images/Header/shopping-bag.png"
+                      alt=""
+                    />
+                    <span class="basket-cart"
+                      ><strong>{{ basketCart.length }}</strong></span
+                    >
+                  </button>
+                  <ul
+                    class="dropdown-menu"
+                    aria-labelledby="dropdownMenuButton1"
+                  >
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li>
+                      <a class="dropdown-item" href="#">Another action</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                    </li>
+                  </ul>
+                </div> -->
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
     <!-- end-icons -->
+
+    <!-- nab-bar-2 -->
     <div ref="navbar" class="section-2 border-bottom pb-4">
-      <div class="container mt-4">
-        <div class="d-flex align-items-center flex-row justify-content-between">
+      <div class="container-lg container-fluid-md mt-4">
+        <div
+          class="serach-and-logo d-flex align-items-center flex-row justify-content-between"
+        >
           <div class="logo">
             <img src="../../public/Images/Header/logo.png" alt="" />
           </div>
@@ -81,9 +291,9 @@
               <i class="fa-solid fa-magnifying-glass"></i>
             </form>
           </div>
-          <div class="shopping-icons">
+          <div class="shopping-icons d-lg-block d-md-none d-sm-none">
             <ul
-              class="shopy-icons list-unstyled align-items-center d-flex flex-row justify-content-between m-0"
+              class="shopy-icons list-unstyled align-items-center d-flex flex-row gap-4 justify-content-between m-0"
             >
               <li>
                 <div class="dropdown">
@@ -132,6 +342,7 @@
                     src="../../public/Images/Header/shopping-bag.png"
                     alt=""
                   />
+                  <span class="basket-cart-num">{{ basketCart.length }}</span>
                 </button>
 
                 <!-- Modal -->
@@ -245,7 +456,7 @@
       </div>
     </div>
     <!-- section-2 -->
-    <div class="border-bottom p-3">
+    <div class="links-header border-bottom p-3">
       <ul
         class="router-links list-unstyled justify-content-center d-flex gap-5 flex-row"
       >
@@ -285,17 +496,27 @@
 
 <script>
 import { mapState } from "vuex";
+import { ref } from "vue";
 export default {
   name: "Header-view",
+  setup() {
+    const lan = localStorage.getItem("lang");
+    const lang = ref(lan);
+    return { lang };
+  },
   computed: {
     ...mapState(["basketCart"]),
   },
   methods: {
     onScroll() {
       this.$refs.navbar.classList.toggle("scroll-fixed", window.scrollY > 800);
-
-      // console.log(window.scrollY)
-      // console.log({ top: this.windowTop })
+    },
+    change(event) {
+      localStorage.setItem("lang", event);
+      this.$i18n.locale = event;
+      this.$router.push({
+        params: { lang: event },
+      });
     },
   },
   mounted() {
@@ -331,14 +552,14 @@ button#dropdownMenuButton1 {
 }
 .shopy-icons div button img,
 button.modal-shoopping img {
-  max-width: 30px;
+  max-width: 28px;
   border: none;
 }
 .shopy-icons div button::after {
   display: none;
 }
 .input-search {
-  width: 600px;
+  width: 50%;
 }
 .input-search input {
   width: 100%;
@@ -393,6 +614,8 @@ a:hover::before {
 }
 a {
   color: black;
+  font-weight: 600;
+  text-transform: uppercase !important;
 }
 .section-2 {
   transition: 0.3s ease-in-out;
@@ -428,6 +651,7 @@ a {
 .modal-shoopping {
   background: none;
   border: none;
+  position: relative;
 }
 /* Modal Box */
 /* .right .modal-dialog,
@@ -475,5 +699,88 @@ a {
 .modal-backdrop {
   /* bug fix - no overlay */
   display: none;
+}
+.dropdown.languages button {
+  box-shadow: none;
+  color: #555 !important;
+  text-transform: uppercase;
+  font-size: 17px !important;
+  letter-spacing: 1 !important;
+}
+.dropdown-toggle[data-v-61dd7a3d]::after {
+  right: -16px;
+}
+.dropdown-item::before {
+  display: none;
+}
+.logo {
+  width: 150px;
+}
+.logo img {
+  max-width: 100%;
+}
+.basket-cart-num {
+  position: absolute;
+  top: 65%;
+  transform: translate(-50%, -39%);
+  right: -28%;
+  background: #777777;
+  color: white;
+  border-radius: 50%;
+  font-weight: bold;
+  width: 22px;
+  text-align: center !important;
+  height: 23px;
+  font-size: 11px;
+  line-height: 23px;
+}
+.shopy-icons.query {
+  gap: 1px;
+}
+
+/* // X-Small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+  .free-shopping {
+    display: none !important;
+  }
+  .links-icons {
+    display: none !important;
+  }
+  .shopping-icons {
+    display: none;
+  }
+  .menu {
+    position: absolute;
+    left: 0;
+  }
+  .serach-and-logo {
+    flex-direction: column !important;
+    gap: 10px;
+  }
+  .input-search {
+    width: 83%;
+  }
+}
+
+/* // Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+  .links-header {
+    display: none !important;
+  }
+}
+
+/* // Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+  .links-header {
+    display: none !important;
+  }
+}
+
+/* // Large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+}
+
+/* // X-Large devices (large desktops, less than 1400px) */
+@media (max-width: 1399.98px) {
 }
 </style>

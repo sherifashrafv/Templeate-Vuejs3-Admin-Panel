@@ -1,3 +1,9 @@
 {
-  "title": "هذا العنوان رائع "
+  "title": "title ",
+
+  "languages": {
+    "title": "languages",
+    "arabic": "Arabic",
+    "english": "English"
+  }
 }

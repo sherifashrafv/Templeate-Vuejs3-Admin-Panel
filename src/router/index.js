@@ -35,7 +35,7 @@ const routes = [
   },
   {
     name: "ProdId",
-    path: "/products:id",
+    path: "/product/:id",
     component: ProdId,
   },
   {

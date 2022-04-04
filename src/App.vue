@@ -1,5 +1,7 @@
 <template>
-  <component :is="layout"> </component>
+  <div :class="$i18n.locale">
+    <component :is="layout"></component>
+  </div>
 </template>
 
 <script>

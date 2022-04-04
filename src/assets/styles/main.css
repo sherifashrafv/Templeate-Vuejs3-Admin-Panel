@@ -1,3 +1,5 @@
+@import "./en.css";
+@import "./ar.css";
 @font-face {
   font-family: "poppins";
   src: url("../fonts/Poppins-Regular.ttf");
@@ -21,3 +23,4 @@ ol {
   padding: 0 !important;
   margin: 0 !important;
 }
+
