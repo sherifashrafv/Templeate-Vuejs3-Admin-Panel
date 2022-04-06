@@ -6,6 +6,9 @@ import Women from "../components/Products/Women.vue";
 import ProdId from "../components/Products/Single.vue";
 import Register from "../components/Register/Register.vue";
 import Login from "../components/Login/login.vue";
+import Setting from "../components/SideUsersTools/sidebar.vue";
+import ProfileSettings from "../components/profileDetails.vue/profile.vue";
+import Categeories from "../components/Categories/Categeories.vue";
 const routes = [
   {
     path: "/",
@@ -34,7 +37,12 @@ const routes = [
     // meta: { layout: "custome" },
   },
   {
-    name: "ProdId",
+    name: "Categeories",
+    path: "/Categeories",
+    component: Categeories,
+  },
+  {
+    name: "SingleProducts",
     path: "/product/:id",
     component: ProdId,
   },
@@ -52,6 +60,21 @@ const routes = [
     component: Login,
     meta: {
       layout: "custome",
+    },
+  },
+  {
+    name: "Setting",
+    path: "/Settings",
+    component: Setting,
+    children: [
+      {
+        name: "user-inforamtion",
+        path: "/",
+        component: ProfileSettings,
+      },
+    ],
+    meta: {
+      layout: "none",
     },
   },
 ];

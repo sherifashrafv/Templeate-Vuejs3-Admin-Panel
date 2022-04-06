@@ -1,7 +1,7 @@
 <template>
   <div class="container my-5">
-    <div class="row">
-      <div class="col-lg-3">
+    <div class="row-modifyed row gy-3">
+      <div class="col-lg-3 col-md-3 col-sm-12">
         <ul
           class="items p-0 m-0 d-flex flex-column gap-2 justify-content-between m-0"
         >
@@ -13,11 +13,15 @@
                 : 'd-flex flex-row gap-2 align-items-center tab',
             ]"
           >
-            <i class="fa-brands fa-amilia"></i>
-            <span>
-              Clothes
+            <img
+              class="w-25"
+              src="../../../public/Images/Tab/fashion.png"
+              alt=""
+            />
+            <span class="text-center">
+              {{ $t("clothes") }}
               <br />
-              440 Products
+              {{ mens.length }}
             </span>
           </li>
 
@@ -29,14 +33,17 @@
                 : 'd-flex flex-row gap-2 align-items-center tab',
             ]"
           >
-            <i class="fa-brands fa-amilia"></i>
-            <span>
-              Clothes
+            <img
+              class="w-25"
+              src="../../../public/Images/Tab/sneakers.png"
+              alt=""
+            />
+            <span class="text-center">
+              {{ $t("clothes") }}
               <br />
-              440 Products
+              {{ mens.length }}
             </span>
           </li>
-
           <li
             @click="activeTab = `3`"
             :class="[
@@ -45,11 +52,15 @@
                 : 'd-flex flex-row gap-2 align-items-center tab',
             ]"
           >
-            <i class="fa-brands fa-amilia"></i>
-            <span>
-              Clothes
+            <img
+              class="w-25"
+              src="../../../public/Images/Tab/watch.png"
+              alt=""
+            />
+            <span class="text-center">
+              {{ $t("clothes") }}
               <br />
-              440 Products
+              {{ mens.length }}
             </span>
           </li>
           <li
@@ -60,16 +71,21 @@
                 : 'd-flex flex-row gap-2 align-items-center tab',
             ]"
           >
-            <i class="fa-brands fa-amilia"></i>
-            <span>
-              Clothes
+            <img
+              class="w-25"
+              src="../../../public/Images/Tab/handbag.png"
+              alt=""
+            />
+            <span class="text-center">
+              {{ $t("clothes") }}
               <br />
-              440 Products
+              {{ womens.length }}
             </span>
           </li>
         </ul>
       </div>
-      <div class="content col-lg-9 h-100">
+      <!-- contents-start -->
+      <div class="content col-lg-9 col-md-9 col-sm-12 h-100">
         <div
           v-if="activeTab === '1'"
           class="tab-content position-relative w-100"
@@ -135,12 +151,16 @@
   </div>
 </template>
 <script>
+import { mapState } from "vuex";
 export default {
   name: "Tabs-Points",
   data() {
     return {
       activeTab: "1",
     };
+  },
+  computed: {
+    ...mapState(["mens", "womens"]),
   },
 };
 </script>
@@ -180,5 +200,20 @@ export default {
   font-weight: bold;
   border: none;
   outline: none;
+}
+/* // Medium devices (tablets, 768px and up) */
+@media (max-width: 991.98px) {
+  .tab-content img {
+    height: 428px;
+  }
+}
+/* // Small devices (landscape phones, 576px and up) */
+@media (max-width: 767.98px) {
+  .row-modifyed {
+    flex-direction: column-reverse;
+  }
+  .tab-content img {
+    height: 100%;
+  }
 }
 </style>

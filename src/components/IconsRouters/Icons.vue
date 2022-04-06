@@ -72,10 +72,11 @@ export default {
 <style scoped>
 .box {
   border: 1px solid #f4f4f4;
-  max-width: 100%;
+  max-width: 360px;
   padding: 35px 10px;
   transition: 0.3s all;
   cursor: pointer;
+  height: fit-content;
 }
 .img-icon {
   width: 50px;

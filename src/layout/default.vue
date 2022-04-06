@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="position-relative">
     <Header />
     <slot />
     <router-view />
@@ -9,7 +9,6 @@
 <script>
 import Header from "../components/Header.vue";
 import Footer from "../components/Footer/Footer.vue";
-
 export default {
   name: "default-layout",
   components: {

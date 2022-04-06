@@ -5,7 +5,11 @@
         <div class="spinner-border"></div>
       </div>
       <div v-else class="row justify-content-center gy-2">
-        <div v-for="prod in posts" class="cards col-lg-3" :key="prod.id">
+        <div
+          v-for="prod in posts"
+          class="col-lg-3 col-md-6 col-sm-6 cards"
+          :key="prod.id"
+        >
           <div class="card position-relative">
             <img :src="prod.img" class="card-img-top" alt="..." />
             <div class="card-body">
@@ -55,19 +59,16 @@
 import { mapState } from "vuex";
 // import { ref } from "@vue/reactivity";
 import axios from "axios";
-import { ref } from "@vue/reactivity";
 import StarRating from "vue-star-rating";
 export default {
   name: "Kids-vue",
   data() {
     return {
       posts: [],
+      loading: true,
     };
   },
-  setup() {
-    const loading = ref(true);
-    return { loading };
-  },
+
   components: {
     StarRating,
   },
@@ -79,7 +80,9 @@ export default {
         this.$store.commit("getMenProduct", res.data);
       })
       .catch((error) => console.log(error))
-      .finally((this.loading = false));
+      .finally(() => {
+        this.loading = false;
+      });
   },
   computed: {
     ...mapState(["mens"]),
@@ -135,5 +138,16 @@ export default {
 .over-lay li:hover {
   cursor: pointer;
   box-shadow: 0px 0px 3px 0px #ddd;
+}
+/* // Small devices (landscape phones, less than 768px) */
+
+@media (max-width: 767.98px) {
+  .cards {
+    max-width: 342px;
+  }
+}
+
+/* // Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
 }
 </style>

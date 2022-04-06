@@ -1,7 +1,7 @@
 <template>
   <div class="container">
-    <div class="row">
-      <div class="col-lg-6">
+    <div class="row gy-1">
+      <div class="col-lg-6 col-md-6 col-sm-12">
         <div class="box-overlay position-relative w-100">
           <img
             class="img-fluid"
@@ -23,7 +23,7 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-6">
+      <div class="col-lg-6 col-md-6 col-sm-12">
         <div class="box-overlay position-relative w-100">
           <img
             class="img-fluid"

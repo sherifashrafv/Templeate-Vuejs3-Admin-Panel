@@ -2,9 +2,6 @@
   <div>
     <swiper
       :navigation="true"
-      :autoplay="{
-        duration: 2000,
-      }"
       :effect="'fade'"
       :modules="modules"
       class="main-swipper position-relative"
@@ -16,13 +13,14 @@
               <div class="box">
                 <div>
                   <hr />
-                  <h class="title-description-box">Boat Headphone Sets</h>
-                  <p class="desc-box-p">Sale Offer</p>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur <br />
-                    adipiscing elit, sed do
-                  </p>
-                  <button class="btn btn-secondary">Order Now</button>
+                  <h class="title-description-box">
+                    {{ $t("carouselHome2.title") }}
+                  </h>
+                  <p class="desc-box-p">{{ $t("carouselHome2.desc") }}</p>
+                  <p>{{ $t("carouselHome2.text") }} <br /></p>
+                  <button class="btn btn-secondary">
+                    {{ $t("carouselHome2.button") }}
+                  </button>
                 </div>
               </div>
             </div>
@@ -36,13 +34,14 @@
               <div class="box">
                 <div>
                   <hr />
-                  <h class="title-description-box">Boat Headphone Sets</h>
-                  <p class="desc-box-p">Sale Offer</p>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur <br />
-                    adipiscing elit, sed do
-                  </p>
-                  <button class="btn btn-secondary">Order Now</button>
+                  <h class="title-description-box">
+                    {{ $t("carouselHome2.title") }}
+                  </h>
+                  <p class="desc-box-p">{{ $t("carouselHome2.desc") }}</p>
+                  <p>{{ $t("carouselHome2.text") }} <br /></p>
+                  <button class="btn btn-secondary">
+                    {{ $t("carouselHome2.button") }}
+                  </button>
                 </div>
               </div>
             </div>

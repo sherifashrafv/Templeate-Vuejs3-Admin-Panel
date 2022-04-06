@@ -2,7 +2,7 @@
   <div class="navbar-main">
     <!-- icons -->
 
-    <div class="section-1 border-bottom p-2">
+    <div ref="navbar" class="section-1 border-bottom p-2">
       <div class="container-lg container-fluid-md">
         <div class="d-flex align-items-center flex-row justify-content-between">
           <div class="d-lg-block d-md-none d-sm-none">
@@ -17,9 +17,7 @@
           </div>
 
           <div class="free-shopping">
-            <span class="text-center"
-              >Free Shipping This Week Order Over - $75
-            </span>
+            <span class="text-center">{{ $t("nav1") }} </span>
           </div>
 
           <div class="d-lg-block d-md-none d-sm-none">
@@ -131,35 +129,6 @@
                     </div>
                   </div>
                 </div>
-                <!-- End Drawer Style Right Modal --><!-- <div class="dropdown">
-                  <button
-                    class="btn btn-secondary dropdown-toggle"
-                    type="button"
-                    id="dropdownMenuButton1"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    <img
-                      src="../../public/Images/Header/shopping-bag.png"
-                      alt=""
-                    />
-                    <span class="basket-cart"
-                      ><strong>{{ basketCart.length }}</strong></span
-                    >
-                  </button>
-                  <ul
-                    class="dropdown-menu"
-                    aria-labelledby="dropdownMenuButton1"
-                  >
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li>
-                      <a class="dropdown-item" href="#">Another action</a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#">Something else here</a>
-                    </li>
-                  </ul>
-                </div> -->
               </li>
               <li>
                 <div class="dropdown">
@@ -273,7 +242,7 @@
     <!-- end-icons -->
 
     <!-- nab-bar-2 -->
-    <div ref="navbar" class="section-2 border-bottom pb-4">
+    <div class="section-2 border-bottom pb-4">
       <div class="container-lg container-fluid-md mt-4">
         <div
           class="serach-and-logo d-flex align-items-center flex-row justify-content-between"
@@ -287,7 +256,12 @@
               action="test.php"
               class="w-100 position-relative"
             >
-              <input type="text" placeholder="search products..." />
+              <input
+                @click="searchVl()"
+                type="text"
+                v-model="search"
+                :placeholder="$t('searchinputHeader')"
+              />
               <i class="fa-solid fa-magnifying-glass"></i>
             </form>
           </div>
@@ -310,7 +284,26 @@
                     class="dropdown-menu"
                     aria-labelledby="dropdownMenuButton1"
                   >
+                    <!-- start-user-found -->
                     <li>
+                      <router-link to="/Settings" class="dropdown-item"
+                        >Settings</router-link
+                      >
+                    </li>
+                    <li>
+                      <router-link
+                        :to="`/${$i18n.locale}/Profile`"
+                        class="dropdown-item"
+                        >Profile</router-link
+                      >
+                    </li>
+                    <li>
+                      <a class="dropdown-item" @click="logOut()">LogOut</a>
+                    </li>
+                    <!-- end-user-found -->
+
+                    <!-- User-not-Found -->
+                    <!-- <li>
                       <router-link class="dropdown-item" to="/Register"
                         >Register</router-link
                       >
@@ -322,7 +315,8 @@
                     </li>
                     <li>
                       <a class="dropdown-item" href="#">Something else here</a>
-                    </li>
+                    </li> -->
+                    <!-- User-not-Found-End -->
                   </ul>
                 </div>
               </li>
@@ -460,34 +454,16 @@
       <ul
         class="router-links list-unstyled justify-content-center d-flex gap-5 flex-row"
       >
-        <li>
+        <li v-for="(link, i) in $tm('navLinks')" :key="i">
           <router-link
             :class="[
               isActive && 'router-link-active',
               isExactActive && 'router-link-exact-active',
             ]"
-            to="/"
+            :to="link.Path"
           >
-            Home
+            {{ link.title }}
           </router-link>
-        </li>
-        <li>
-          <router-link to="/about"> Products </router-link>
-        </li>
-        <li>
-          <router-link to="/Products"> Products </router-link>
-        </li>
-        <li>
-          <router-link to="/Products"> Products </router-link>
-        </li>
-        <li>
-          <router-link to="/Products"> Products </router-link>
-        </li>
-        <li>
-          <router-link to="/Products"> Products </router-link>
-        </li>
-        <li>
-          <router-link to="/Products"> Products </router-link>
         </li>
       </ul>
     </div>
@@ -502,18 +478,24 @@ export default {
   setup() {
     const lan = localStorage.getItem("lang");
     const lang = ref(lan);
-    return { lang };
+    const search = ref("");
+    const user = ref(false);
+    return { lang, search, user };
   },
   computed: {
     ...mapState(["basketCart"]),
   },
   methods: {
+    searchVl() {
+      localStorage.setItem("search-value", JSON.stringify(this.search));
+    },
     onScroll() {
       this.$refs.navbar.classList.toggle("scroll-fixed", window.scrollY > 800);
     },
     change(event) {
       localStorage.setItem("lang", event);
       this.$i18n.locale = event;
+      window.location.reload();
       this.$router.push({
         params: { lang: event },
       });
@@ -521,6 +503,24 @@ export default {
   },
   mounted() {
     window.addEventListener("scroll", this.onScroll);
+    let lang = localStorage.getItem("lang");
+    let user = localStorage.getItem("user-info");
+    console.log(lang);
+    if (!lang) localStorage.setItem("lang", this.$i18n.locale);
+    //section added :
+    if (lang) {
+      if (lang === "ar") {
+        import("../assets/styles/ar.css");
+      } else {
+        import("../assets/styles/en.css");
+      }
+      this.$i18n.locale = lang;
+    }
+    if (!user) {
+      console.log("user");
+    } else {
+      console.log("not-found");
+    }
   },
   beforeUnmount() {
     window.removeEventListener("scroll", this.onScroll);
@@ -617,10 +617,10 @@ a {
   font-weight: 600;
   text-transform: uppercase !important;
 }
-.section-2 {
+.section-1 {
   transition: 0.3s ease-in-out;
 }
-.section-2.scroll-fixed {
+.section-1.scroll-fixed {
   background: white;
   position: fixed;
   width: 100%;

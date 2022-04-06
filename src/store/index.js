@@ -7,9 +7,23 @@ export default createStore({
     womens: [],
     basketCart: [],
     testimonies: [],
+    categoires: [],
+    showSpinner: true,
   },
-  getters: {},
+  getters: {
+    getSpinner(state) {
+      return state.showSpinner;
+    },
+  },
   mutations: {
+    SET_SPINNER(state, spinner) {
+      state.showSpinner = spinner;
+      if (state.showSpinner) {
+        document.body.style.overflow = "hidden";
+      } else {
+        document.body.style.overflow = "auto";
+      }
+    },
     getMenProduct(state, payload) {
       state.mens = payload;
     },
@@ -18,6 +32,9 @@ export default createStore({
     },
     getTestimonies(state, payload) {
       state.testimonies = payload;
+    },
+    getData(state, payload) {
+      state.categoires = payload;
     },
     basketCart: (state, product) => {
       const qP = state.basketCart.find((pro) => pro.id === product.id);
@@ -49,12 +66,18 @@ export default createStore({
     async getTestimonies({ commit }, payload) {
       await commit("getTestimonies", payload);
     },
+    async getData({ commit }, payload) {
+      await commit("getData", payload);
+    },
     async addToCart({ commit }, payload) {
       localStorage.setItem("basketCart", JSON.stringify(payload));
       await commit("basketCart", payload);
     },
     redirTo({ commit }, payload) {
       commit("redrectTo", payload.val);
+    },
+    setSpin({ commit }, payload) {
+      commit("SET_SPINNER", payload.val);
     },
   },
   modules: {},

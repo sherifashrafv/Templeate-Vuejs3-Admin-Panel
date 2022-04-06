@@ -1,4 +1,38 @@
-htm:lang(ar) * {
+/* htm:lang(ar) * {
   text-align: right !important;
   direction: rtl;
+} */
+@font-face {
+  font-family: "cairo-sans";
+  src: url("../../../public/fonts/Cairo-VariableFont_wght.ttf");
+}
+
+body {
+  font-family: "cairo-sans" !important;
+}
+.router-links {
+  flex-direction: row-reverse !important;
+}
+.serach-and-logo {
+  flex-direction: row-reverse !important;
+}
+.dropdown-toggle::after {
+  top: 50%;
+  right: 74% !important;
+}
+input[type="text"] {
+  padding-right: 7% !important;
+}
+input {
+  direction: rtl;
+}
+.titles-carousel-items {
+  text-align: right !important;
+}
+.dropdown-item {
+  text-align: right !important;
+}
+a.router-link-active.router-link-exact-active::after {
+  bottom: -51% !important;
+  left: 0;
 }

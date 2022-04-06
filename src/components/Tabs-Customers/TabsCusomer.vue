@@ -2,8 +2,8 @@
   <section class="py-5">
     <div class="container">
       <div class="text-center">
-        <h2 class="ec-title">client Review</h2>
-        <p>What Say Client About Us</p>
+        <h2 class="ec-title">{{ $t("clients.title") }}</h2>
+        <p>{{ $t("clients.say") }}</p>
       </div>
       <div
         v-if="activeTab === '1'"
@@ -15,13 +15,9 @@
         class=""
       >
         <div>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut sit
-          consectetur nobis soluta quae hic, obcaecati beatae magnam minus,
-          pariatur repudiandae molestiae nesciunt voluptatum laboriosam porro
-          tempora suscipit accusantium labore.
+          {{ $t("clients.desc") }}
         </div>
-        <div class="cunosmer">John Doe</div>
-        <div>General Manger</div>
+        <div class="cunosmer">{{ $t("clients.name") }}</div>
         <div>
           <star-rating
             class="justify-content-center"

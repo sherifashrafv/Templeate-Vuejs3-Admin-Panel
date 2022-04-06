@@ -86,6 +86,218 @@
       "quantity": 1
     }
   ],
+  "women": [
+    {
+      "id": 1,
+      "title": "Round Neck T-Shirt",
+      "price": 27,
+      "img": "https://loopinfosol.in/themeforest/ekka-html-v31/ekka-html/assets/images/product-image/6_1.jpg",
+      "quantity": 1
+    },
+    {
+      "id": 2,
+      "title": "Round Neck T-Shirt",
+      "price": 27,
+      "img": "https://loopinfosol.in/themeforest/ekka-html-v31/ekka-html/assets/images/product-image/7_2.jpg",
+      "quantity": 1
+    },
+    {
+      "id": 3,
+      "title": "Round Neck T-Shirt",
+      "price": 27,
+      "img": "https://loopinfosol.in/themeforest/ekka-html-v31/ekka-html/assets/images/product-image/1_1.jpg",
+      "quantity": 1
+    },
+    {
+      "id": 5,
+      "title": "Round Neck T-Shirt",
+      "price": 27,
+      "img": "https://loopinfosol.in/themeforest/ekka-html-v31/ekka-html/assets/images/product-image/2_1.jpg",
+      "quantity": 1
+    },
+    {
+      "id": 6,
+      "title": "Round Neck T-Shirt",
+      "price": 27,
+      "img": "https://loopinfosol.in/themeforest/ekka-html-v31/ekka-html/assets/images/product-image/2_1.jpg",
+      "quantity": 1
+    },
+    {
+      "id": 7,
+      "title": "Round Neck T-Shirt",
+      "price": 27,
+      "img": "https://loopinfosol.in/themeforest/ekka-html-v31/ekka-html/assets/images/product-image/3_1.jpg",
+      "quantity": 1
+    },
+    {
+      "id": 8,
+      "title": "Round Neck T-Shirt",
+      "price": 27,
+      "img": "https://loopinfosol.in/themeforest/ekka-html-v31/ekka-html/assets/images/product-image/4_1.jpg",
+      "quantity": 1
+    },
+    {
+      "id": 9,
+      "title": "Round Neck T-Shirt",
+      "price": 27,
+      "img": "https://loopinfosol.in/themeforest/ekka-html-v31/ekka-html/assets/images/product-image/5_1.jpg",
+      "quantity": 1
+    },
+    {
+      "id": 10,
+      "title": "Round Neck T-Shirt",
+      "price": 27,
+      "img": "https://loopinfosol.in/themeforest/ekka-html-v31/ekka-html/assets/images/product-image/1_2.jpg",
+      "quantity": 1
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "title": "tshirt",
+      "price": 27,
+      "img": "https://fzi4k1gk2dw3t0fqy18sw8qi-wpengine.netdna-ssl.com/wp-content/uploads/2013/08/278453-0012_1-510x649.jpeg",
+      "quantity": 1,
+      "category": "women"
+    },
+    {
+      "id": 2,
+      "title": "Round Neck T-Shirt",
+      "price": 27,
+      "img": "https://fzi4k1gk2dw3t0fqy18sw8qi-wpengine.netdna-ssl.com/wp-content/uploads/2013/08/258836-0426_1.jpeg",
+      "quantity": 1,
+      "category": "women"
+    },
+    {
+      "id": 3,
+      "title": "Round Neck T-Shirt",
+      "price": 27,
+      "img": "https://fzi4k1gk2dw3t0fqy18sw8qi-wpengine.netdna-ssl.com/wp-content/uploads/2013/08/589864-5295_1.jpeg",
+      "quantity": 1,
+      "category": "women"
+    },
+    {
+      "id": 5,
+      "title": "Round Neck T-Shirt",
+      "price": 27,
+      "img": "https://loopinfosol.in/themeforest/ekka-html-v31/ekka-html/assets/images/product-image/2_1.jpg",
+      "quantity": 1,
+      "category": "women"
+    },
+    {
+      "id": 6,
+      "title": "Round Neck T-Shirt",
+      "price": 27,
+      "img": "https://fzi4k1gk2dw3t0fqy18sw8qi-wpengine.netdna-ssl.com/wp-content/uploads/2013/08/271689-0001_1.jpeg",
+      "quantity": 1,
+      "category": "women"
+    },
+    {
+      "id": 7,
+      "title": "Round Neck T-Shirt",
+      "price": 27,
+      "img": "https://loopinfosol.in/themeforest/ekka-html-v31/ekka-html/assets/images/product-image/3_1.jpg",
+      "quantity": 1,
+      "category": "women"
+    },
+    {
+      "id": 8,
+      "title": "Round Neck T-Shirt",
+      "price": 27,
+      "img": "https://loopinfosol.in/themeforest/ekka-html-v31/ekka-html/assets/images/product-image/4_1.jpg",
+      "quantity": 1,
+      "category": "women"
+    },
+    {
+      "id": 9,
+      "title": "Round Neck T-Shirt",
+      "price": 27,
+      "img": "https://loopinfosol.in/themeforest/ekka-html-v31/ekka-html/assets/images/product-image/5_1.jpg",
+      "quantity": 1,
+      "category": "women"
+    },
+    {
+      "id": 10,
+      "title": "Round Neck T-Shirt",
+      "price": 27,
+      "img": "https://loopinfosol.in/themeforest/ekka-html-v31/ekka-html/assets/images/product-image/1_2.jpg",
+      "quantity": 1,
+      "category": "women"
+    },
+
+    {
+      "id": 11,
+      "title": "Round Neck T-Shirt",
+      "price": 27,
+      "img": "https://cdn.shopify.com/s/files/1/0551/8001/products/blue_overdyed_munich_logo_t_shirt_1_75a48775-5bf9-4d1e-b0e2-fd4210e87538_420x530_crop_center.jpg?v=1611842026",
+      "quantity": 1,
+      "category": "men"
+    },
+    {
+      "id": 12,
+      "title": "Round Neck T-Shirt",
+      "price": 27,
+      "img": "https://cdn.shopify.com/s/files/1/0551/8001/products/khaki_hooded_puffer_jacket_1_7e46e7f6-0aa6-4d44-8020-ea82df61a87c_420x530_crop_center.jpg?v=1611842054",
+      "quantity": 1,
+      "category": "men"
+    },
+    {
+      "id": 13,
+      "title": "Round Neck T-Shirt",
+      "price": 27,
+      "img": "https://cdn.shopify.com/s/files/1/0551/8001/products/red_atlanta_georgia_logo_sweatshirt_1_beff9798-ef5a-4ba8-bd9e-6dc32447eb6b_420x530_crop_center.jpg?v=1611842115",
+      "quantity": 1,
+      "category": "men"
+    },
+    {
+      "id": 14,
+      "title": "Round Neck T-Shirt",
+      "price": 27,
+      "img": "https://loopinfosol.in/themeforest/ekka-html-v31/ekka-html/assets/images/product-image/2_1.jpg",
+      "quantity": 1,
+      "category": "men"
+    },
+    {
+      "id": 15,
+      "title": "Round Neck T-Shirt",
+      "price": 27,
+      "img": "https://cdn.shopify.com/s/files/1/0551/8001/products/black_canvas_stripe_sole_trainer_1_064e417e-408b-4549-b55f-d9135624eaca_420x530_crop_center.jpg?v=1645532164",
+      "quantity": 1,
+      "category": "men"
+    },
+    {
+      "id": 16,
+      "title": "Round Neck T-Shirt",
+      "price": 27,
+      "img": "https://loopinfosol.in/themeforest/ekka-html-v31/ekka-html/assets/images/product-image/3_1.jpg",
+      "quantity": 1,
+      "category": "men"
+    },
+    {
+      "id": 17,
+      "title": "Round Neck T-Shirt",
+      "price": 27,
+      "img": "https://loopinfosol.in/themeforest/ekka-html-v31/ekka-html/assets/images/product-image/4_1.jpg",
+      "quantity": 1,
+      "category": "men"
+    },
+    {
+      "id": 18,
+      "title": "Round Neck T-Shirt",
+      "price": 27,
+      "img": "https://loopinfosol.in/themeforest/ekka-html-v31/ekka-html/assets/images/product-image/5_1.jpg",
+      "quantity": 1,
+      "category": "men"
+    },
+    {
+      "id": 19,
+      "title": "Round Neck T-Shirt",
+      "price": 27,
+      "img": "https://loopinfosol.in/themeforest/ekka-html-v31/ekka-html/assets/images/product-image/1_2.jpg",
+      "quantity": 1,
+      "category": "men"
+    }
+  ],
   "collection": [
     {
       "id": 11,

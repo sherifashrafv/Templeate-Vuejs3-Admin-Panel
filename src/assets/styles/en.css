@@ -1,4 +1,16 @@
 /* html:lang(en) * {
-  text-align: left !important;
   direction: ltr;
 } */
+@font-face {
+  font-family: "poppins";
+  src: url("../fonts/Poppins-Regular.ttf");
+}
+body {
+  font-family: "poppins";
+}
+.router-links {
+  flex-direction: row !important;
+}
+input {
+  direction: ltr;
+}

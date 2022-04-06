@@ -5,5 +5,92 @@
     "title": "languages",
     "arabic": "Arabic",
     "english": "English"
+  },
+  "navLinks": [
+    { "title": "Home", "Path": "/" },
+    { "title": "Categeories", "Path": "/Categeories" },
+    { "title": "Products", "Path": "/Products" },
+    { "title": "Pages", "Path": "/Pages" },
+    { "title": "Others", "Path": "/Others" },
+    { "title": "Blog", "Path": "/Blog" },
+    { "title": "Elements", "Path": "/Elements" },
+    { "title": "HotOffers", "Path": "/HotOffers" }
+  ],
+  "nav1": "FREE SHIPPING FOR THIS WEEKLY ORDER OVER - $75",
+  "carouselHome": {
+    "title": "Boat Headphone Sets",
+    "desc": "Sale offer",
+    "text": " Lorem ipsum dolor sit amet, consectetur ",
+    "button": "OrderNow"
+  },
+  "carouselHome2": {
+    "title": "Boat Headphone Sets",
+    "desc": "Sale offer",
+    "text": " Lorem ipsum dolor sit amet, consectetur ",
+    "button": "OrderNow"
+  },
+  "Fetured": "Fetured Items",
+  "limted": "Limted Time",
+  "searchinputHeader": "Search Products ?",
+  "mens": "For Mens",
+  "women": "For Womens",
+  "kids": "For Kids",
+  "clothes": "Clothes ",
+  "counter": {
+    "min": "min",
+    "sec": "sec",
+    "hour": "hour",
+    "days": "days"
+  },
+  "buttonCars": "Remind Me",
+  "bookNow": "Book Now",
+  "totalBooking": "Total Booking",
+  "currency": "$",
+  "clients": {
+    "title": "اراء العملاء",
+    "say": "ماذا يقولون العملاء عننا",
+    "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut sit consectetur nobis soluta quae hic, obcaecati beatae magnam minus, pariatur repudiandae molestiae nesciunt voluptatum laboriosam porro tempora suscipit accusantium labore.",
+    "name": "حسناء محمد"
+  },
+  "OurTopCollection": "Our Top Collection",
+  "Browse": "Browse The Collection Of Top Products",
+  "col1": {
+    "title": "71 Pilgrim Avenue Chevy Chase, east california.",
+    "links": [
+      { "title": "CallUS:", "desc": "+44 0123 456 789" },
+      { "title": "Email:", "dec": "+example@ec-email.com" }
+    ]
+  },
+  "col2": {
+    "title": "Information",
+    "links": [
+      { "title": "About us", "path": "/Aboutus" },
+      { "title": "FAQ", "path": "/FAQ" },
+      { "title": "Delivery Information", "path": "/DeliveryInformation" },
+      { "title": "Contact us", "path": "/Contactus" }
+    ]
+  },
+  "col3": {
+    "title": "Account",
+    "links": [
+      { "title": "My Account", "path": "/MyAccount" },
+      { "title": "Order History", "path": "/OrderHistory" },
+      { "title": "WishList", "path": "/WishList" },
+      { "title": "Specials", "path": "/Contactus" }
+    ]
+  },
+  "col4": {
+    "title": "Services",
+    "links": [
+      { "title": "My Account", "path": "/MyAccount" },
+      { "title": "Order History", "path": "/OrderHistory" },
+      { "title": "WishList", "path": "/WishList" },
+      { "title": "Specials", "path": "/Contactus" }
+    ]
+  },
+  "col5": {
+    "title": "Newsletter",
+    "desc": "Get instant updates about our new products and special promos!",
+    "input": "Enter your email here..."
   }
 }

@@ -7,6 +7,7 @@
 </template>
 <script>
 import BreadCrumb from "../components/BreadCrumb/crumb.vue";
+
 export default {
   name: "custome-layout",
   components: {
