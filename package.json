@@ -20,7 +20,7 @@
     "filepond": "^4.30.3",
     "gsap": "^3.10.3",
     "laravel-vue-pagination": "^3.0.0",
-    "moment": "^2.29.1",
+    "moment": "^2.29.2",
     "swiper": "^8.0.7",
     "v-animate-css": "^0.0.5",
     "v-wow": "github:guisoares2011/vue-wow",
