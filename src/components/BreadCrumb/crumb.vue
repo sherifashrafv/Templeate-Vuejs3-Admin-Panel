@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-light bg-gradient p-3">
+  <div class="bg-light bg-gradient p-4">
     <div class="crumb">
       <div class="container">
         <div class="d-flex flex-row align-items-center justify-content-between">

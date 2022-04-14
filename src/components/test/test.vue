@@ -1,12 +1,12 @@
 <template>
-  <div class="mt-5">
+  <div>
     <div class="container">
       <div class="row">
-        <div class="col-3 mt-2">
+        <div class="col-3">
           <div class="head-title">
             <h1>Filter Products By</h1>
           </div>
-          <div class="categories mt-3">
+          <div class="categories mt-4">
             <h5 class="pb-2 text-black"><strong>Categories</strong></h5>
             <ul class="d-flex flex-column gap-2">
               <div class="input-search">
@@ -20,7 +20,7 @@
               <li
                 v-for="filter in filters"
                 :key="filter"
-                class="d-flex flex-row gap-2 w-100 align-items-center"
+                class="d-flex flex-row align-items-center"
               >
                 <div class="form-check">
                   <input
@@ -30,8 +30,6 @@
                     type="checkbox"
                     value=""
                   />
-                </div>
-                <div>
                   <label
                     :for="filter"
                     @click="() => filterPosts(filter)"
@@ -69,36 +67,12 @@
                     :rating="3"
                     :show-rating="false"
                   />
-                  <h5 class="mt-2">
-                    <del class="">{{ $t("currency") }}{{ prod.price - 7 }}</del>
-
-                    {{ prod.price + $t("currency") }}
-                  </h5>
+                  <h6 class="mt-2">
+                    <del class="">{{ prod.price - 7 }}</del>
+                    {{ prod.price }}
+                  </h6>
                 </div>
 
-                <!-- overlay -->
-                <ul
-                  class="over-lay list-unstyled p-0 m-0 d-flex gap-2 flex-column"
-                >
-                  <li @click="addTocart(prod)">
-                    <img
-                      src="../../../public/Images/Header/shopping-bag.png"
-                      alt=""
-                    />
-                  </li>
-                  <li>
-                    <img src="../../../public/Images/Header/heart.png" alt="" />
-                  </li>
-                  <li>
-                    <img
-                      src="../../../public/Images/Header/avatar.png"
-                      alt=""
-                    />
-                  </li>
-                  <li>
-                    <img src="../../../public/Images/Tab/view.png" alt="" />
-                  </li>
-                </ul>
                 <!-- end over-lay -->
               </div>
             </div>
@@ -109,8 +83,6 @@
                 :per-page="perPage"
                 @page-changed="onPageClick($event)"
                 styled="centered"
-                text-before-input=""
-                text-after-input=""
               />
             </div>
           </div>
@@ -126,8 +98,8 @@
 import axios from "axios";
 import VueTailwindPagination from "@ocrv/vue-tailwind-pagination";
 import "@ocrv/vue-tailwind-pagination/styles";
-// import { mapState } from "vuex";
-const filter = ["All", "Men", "Women"];
+import { mapState } from "vuex";
+const filter = ["all", "men", "women"];
 export default {
   name: "show-test",
   components: {
@@ -149,15 +121,14 @@ export default {
       this.getData(this.currentPage);
     },
     async getData(pageNumber) {
-      await axios.get(`api?page=${pageNumber}`).then((res) => {
-        console.log(res.data[0].total);
-        this.currentPage = res.data[0].page;
-        this.perPage = res.data[0].per_page;
-        this.total = res.data[0].total;
-        this.data = res.data[0].data;
-        this.resetData = res.data[0].data;
-      });
+      var response = await axios.get(`api?page=${pageNumber}`);
       // var responseData = response.data;
+      console.log(response.data[0].total);
+      this.currentPage = response.data[0].page;
+      this.perPage = response.data[0].per_page;
+      this.total = response.data[0].total;
+      this.data = response.data[0].data;
+      this.resetData = response.data[0].data;
     },
     filterPosts(prod) {
       console.log(prod);
@@ -184,23 +155,18 @@ export default {
     // console.log(this.data);
   },
   computed: {
-    // ...mapState(["categoires"]),
+    ...mapState(["categoires"]),
   },
 };
 </script>
 <style scoped>
 .head-title {
   background: #f7f7f7;
+  padding: 15px;
   max-width: 100%;
 }
 .head-title h1 {
   font-size: 16px;
-  font-weight: bold;
-  padding: 20px 15px;
-}
-.form-check-input {
-  width: 25px;
-  height: 25px;
 }
 .categories {
   padding: 20px;
@@ -212,63 +178,8 @@ export default {
   width: 100%;
 }
 .card {
-  /* min-height: 450px !important;
-  max-height: 450px !important; */
+  min-height: 400px !important;
+  max-height: 400px !important;
   margin: 10px 0;
-}
-.over-lay {
-  position: absolute;
-  bottom: 41%;
-  right: 3%;
-  width: 16%;
-  height: fit-content;
-}
-
-.over-lay li:not(:last-child) {
-  width: 40px;
-  padding: 10px;
-  height: 40px;
-  background: #ffffff;
-  border-radius: 15px 15px 5px 5px;
-  border: 1px solid #eeeeee;
-}
-
-.over-lay li:last-child {
-  width: 40px;
-  padding: 10px;
-  height: 40px;
-  background: #ffffff;
-  border-radius: 5px 5px 15px 15px;
-  border: 1px solid #eeeeee;
-}
-.over-lay li img {
-  max-width: 100%;
-  height: 100%;
-}
-.over-lay {
-  transition: 0.3s ease-in-out;
-  transform: scale(1, 0);
-}
-.card:hover .over-lay {
-  transform: scale(1, 1);
-}
-.over-lay li:hover {
-  cursor: pointer;
-  box-shadow: 0px 0px 3px 0px #ddd;
-}
->>> .w-14.rounded-md.border.border-indigo-400.px-1.py-1,
->>> .flex.items-center.pl-4.font-medium.cursor-pointer {
-  display: none !important;
-}
->>> .from-blue-400 {
-  background: none !important;
-}
->>> section.flex.justify-between.bg-white.rounded-lg.border.border-gray-200.px-10.py-3.text-gray-700.font-montserrat {
-  justify-content: flex-end !important;
-}
->>> span.transform.-rotate-45 {
-  padding: 10px 19px;
-  color: #3474d4;
-  font-weight: bold;
 }
 </style>

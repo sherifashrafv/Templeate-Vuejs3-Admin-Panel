@@ -9,6 +9,11 @@ import Login from "../components/Login/login.vue";
 import Setting from "../components/SideUsersTools/sidebar.vue";
 import ProfileSettings from "../components/profileDetails.vue/profile.vue";
 import Categeories from "../components/Categories/Categeories.vue";
+import HotOffers from "../components/HotOffers/HotOffers.vue";
+import Edit from "../components/EditInformation/Edit.vue";
+import DashBoard from "../components/Dashboard/DashBoard.vue";
+import MyProducts from "../components/ProdcutsDashBoard/MyProducts.vue";
+// import Test from "../components/test/test.vue";
 const routes = [
   {
     path: "/",
@@ -17,7 +22,7 @@ const routes = [
     children: [
       {
         name: "ForAll",
-        path: "/",
+        path: "",
         component: ForAll,
       },
       {
@@ -27,6 +32,7 @@ const routes = [
       },
     ],
   },
+
   {
     path: "/about",
     name: "about",
@@ -37,6 +43,37 @@ const routes = [
     // meta: { layout: "custome" },
   },
   {
+    path: "/Settings",
+    name: "Settings",
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: Setting,
+    children: [
+      {
+        name: "profile",
+        path: "/Settings/",
+        component: ProfileSettings,
+      },
+      {
+        name: "Edit",
+        path: "/Settings/Edit",
+        component: Edit,
+      },
+      {
+        name: "Dashboard",
+        path: "/Settings/DashBoard",
+        component: DashBoard,
+      },
+      {
+        name: "MyProducts",
+        path: "/Settings/Products",
+        component: MyProducts,
+      },
+    ],
+    meta: { layout: "none" },
+  },
+  {
     name: "Categeories",
     path: "/Categeories",
     component: Categeories,
@@ -45,6 +82,11 @@ const routes = [
     name: "SingleProducts",
     path: "/product/:id",
     component: ProdId,
+  },
+  {
+    name: "HotOffers",
+    path: "/HotOffers",
+    component: HotOffers,
   },
   {
     name: "Register",
@@ -60,21 +102,6 @@ const routes = [
     component: Login,
     meta: {
       layout: "custome",
-    },
-  },
-  {
-    name: "Setting",
-    path: "/Settings",
-    component: Setting,
-    children: [
-      {
-        name: "user-inforamtion",
-        path: "/",
-        component: ProfileSettings,
-      },
-    ],
-    meta: {
-      layout: "none",
     },
   },
 ];

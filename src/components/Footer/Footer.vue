@@ -1,7 +1,18 @@
 <template>
   <footer class="mt-5">
-    <div class="container">
+    <div class="footer-message">
+      <div class="container">
+        <div class="row">
+          <div class="text-center p-4" style="color: aliceblue">
+            <span>Win a contest! Get this limited-editon</span
+            ><a href="#" target="_blank">View Detail</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container mt-5">
       <div class="row">
+        <!-- footer-1 -->
         <!-- col-1 -->
         <div class="col-sm-12 col-lg-3">
           <div class="img-logo w-75">
@@ -163,5 +174,8 @@ input.input- {
   border-radius: 50px;
   background: #f7f7f7;
   text-align: center;
+}
+.footer-message {
+  background: #555555;
 }
 </style>

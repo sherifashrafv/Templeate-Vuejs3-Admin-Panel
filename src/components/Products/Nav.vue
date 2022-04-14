@@ -10,10 +10,18 @@
           class="mt-2 d-flex flex-row justify-content-center gap-5 list-unstyled p-0"
         >
           <li>
-            <router-link exact to="/">{{ $t("mens") }} </router-link>
+            <router-link
+              :class="[
+                isActive && 'router-link-active',
+                isExactActive && 'router-link-exact-active',
+              ]"
+              exact
+              to="/"
+              >{{ $t("mens") }}
+            </router-link>
           </li>
           <li>
-            <router-link to="women">{{ $t("women") }}</router-link>
+            <router-link to="/women">{{ $t("women") }}</router-link>
           </li>
         </ul>
       </div>

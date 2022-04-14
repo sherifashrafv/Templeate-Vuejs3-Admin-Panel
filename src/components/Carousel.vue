@@ -10,19 +10,21 @@
         <div class="container">
           <div class="row">
             <div class="col-lg-12">
-              <div class="box">
-                <div>
-                  <hr />
-                  <h class="title-description-box">
-                    {{ $t("carouselHome2.title") }}
-                  </h>
-                  <p class="desc-box-p">{{ $t("carouselHome2.desc") }}</p>
-                  <p>{{ $t("carouselHome2.text") }} <br /></p>
-                  <button class="btn btn-secondary">
-                    {{ $t("carouselHome2.button") }}
-                  </button>
+              <Transition @before-enter="beforeEnter" @enter="enter">
+                <div class="box">
+                  <div>
+                    <hr />
+                    <h class="title-description-box">
+                      {{ $t("carouselHome2.title") }}
+                    </h>
+                    <p class="desc-box-p">{{ $t("carouselHome2.desc") }}</p>
+                    <p>{{ $t("carouselHome2.text") }} <br /></p>
+                    <button class="btn btn-secondary">
+                      {{ $t("carouselHome2.button") }}
+                    </button>
+                  </div>
                 </div>
-              </div>
+              </Transition>
             </div>
           </div>
         </div>
@@ -56,7 +58,7 @@ import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/css";
 
 import "swiper/css/navigation";
-
+import gsap from "gsap";
 import { Navigation, Autoplay } from "swiper";
 export default {
   name: "Carousel-Images",
@@ -65,8 +67,21 @@ export default {
     SwiperSlide,
   },
   setup() {
+    const beforeEnter = (el) => {
+      el.style.opacity = 0;
+      el.style.transform = "translateY(-100px)";
+    };
+    const enter = (el) => {
+      gsap.to(el, {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        delay: 0.5,
+      });
+    };
     return {
       modules: [Navigation, Autoplay],
+      gsap: [beforeEnter, enter],
     };
   },
 };
@@ -139,14 +154,14 @@ export default {
 .box {
   display: flex;
   /* flex-direction: column; */
-  position: absolute;
-  top: 0;
+  /* position: absolute;
+  top: 0; */
   width: 100%;
-  height: 100%;
-  align-items: flex-start;
+  height: 80vh;
+  /* align-items: flex-start; */
   align-items: center;
-  padding: 5rem;
-  left: 0;
+  /* padding: 5rem; */
+  /* left: 0; */
 }
 .box hr {
   width: 10%;
@@ -159,8 +174,8 @@ export default {
   margin-bottom: 25px;
   padding-top: 25px;
   color: #555;
-  font-size: 45px;
-  font-weight: 600;
+  font-size: 56px;
+  font-weight: bolder;
   letter-spacing: 2px;
   font-family: "Fjalla One";
   position: relative;
@@ -172,6 +187,24 @@ export default {
   margin-bottom: 11px;
   text-transform: uppercase;
   letter-spacing: 1.6px;
+}
+.modal-body {
+  flex: 0 1 auto !important;
+}
+
+.modal-footer {
+  display: flex;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+  /* align-items: center; */
+  /* justify-content: flex-end; */
+  padding: 0.75rem;
+  border-top: 1px solid #dee2e6;
+  border-bottom-right-radius: calc(0.3rem - 1px);
+  border-bottom-left-radius: calc(0.3rem - 1px);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 
 @media (max-width: 992px) {

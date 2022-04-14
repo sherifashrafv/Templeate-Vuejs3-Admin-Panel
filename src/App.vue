@@ -10,7 +10,7 @@
       </div>
     </div>
 
-    <component :is="layout"> </component>
+    <component v-else :is="layout"> </component>
   </div>
 </template>
 
@@ -35,9 +35,7 @@ export default {
     ...mapActions(["setSpin"]),
   },
   mounted() {
-    setTimeout(() => {
-      this.setSpin({ val: false });
-    }, 3000);
+    this.setSpin({ val: false });
   },
   computed: {
     ...mapState(["showSpinner"]),

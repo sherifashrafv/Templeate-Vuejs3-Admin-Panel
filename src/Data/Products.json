@@ -19,6 +19,97 @@
       "city": "1",
       "phone": "01129706441",
       "id": 2
+    },
+    {
+      "email": "Sherif@yxx.com",
+      "password": "01129706441",
+      "username": "sherif",
+      "lastName": "ashraf",
+      "address": "01129706441",
+      "phone": "01129706441",
+      "id": 3
+    },
+    {
+      "email": "sherif@yahoo.com",
+      "password": "01129706441",
+      "username": "sherif",
+      "lastName": "ashrafa",
+      "address": "mansoura",
+      "phone": "01129706441",
+      "id": 4
+    },
+    {
+      "email": "ashrafsherif483@yahoo.com",
+      "password": "01129706441",
+      "username": "ashrafsherif483@yahoo.com",
+      "lastName": "ashraf",
+      "address": "Elmansoura/minyat-elnasr",
+      "phone": "01129706441",
+      "id": 5
+    },
+    {
+      "email": "sherif@yahoo.com",
+      "password": "01129706441",
+      "username": "ashrafsherif483@yahoo.com",
+      "lastName": "01129706441",
+      "address": "Elmansoura/minyat-elnasr",
+      "phone": "01129706441",
+      "id": 6
+    },
+    {
+      "email": "ashrafsherif483@yahoo.com",
+      "password": "9510223456",
+      "username": "mohamed",
+      "lastName": "abdalah",
+      "address": "Elmansoura/minyat-elnasr",
+      "phone": "01129706441",
+      "id": 7
+    },
+    {
+      "email": "mahmoudkhalifa@yahoo.com",
+      "password": "0123456789",
+      "username": "mahmoud",
+      "lastName": "khalifa",
+      "address": "mansoura/dikirens",
+      "phone": "01002233201",
+      "id": 8
+    }
+  ],
+  "usersProducts": [
+    {
+      "title": "my first title",
+      "price": "23",
+      "categories": ["mens"],
+      "userid": 4,
+      "id": 1
+    },
+    {
+      "title": "my first title",
+      "price": "23",
+      "categories": ["mens"],
+      "userid": 4,
+      "id": 1
+    },
+    {
+      "title": "my first title",
+      "price": "23",
+      "categories": ["mens"],
+      "userid": 4,
+      "id": 1
+    },
+    {
+      "title": "my first title",
+      "price": "23",
+      "categories": ["mens"],
+      "userid": 4,
+      "id": 1
+    },
+    {
+      "title": "my first title",
+      "price": "23",
+      "categories": ["mens"],
+      "userid": 4,
+      "id": 1
     }
   ],
   "men": [
@@ -27,63 +118,87 @@
       "title": "Round Neck T-Shirt",
       "price": 27,
       "img": "https://loopinfosol.in/themeforest/ekka-html-v31/ekka-html/assets/images/product-image/6_1.jpg",
-      "quantity": 1
+      "quantity": 1,
+      "avalible": "",
+      "description": "Satisfaction Guaranteed. Return or exchange any order within 30 days.Designed and sold by Hafeez Center in the United States. Satisfaction Guaranteed. Return or exchange any order within 30"
     },
     {
       "id": 2,
       "title": "Round Neck T-Shirt",
       "price": 27,
       "img": "https://loopinfosol.in/themeforest/ekka-html-v31/ekka-html/assets/images/product-image/7_2.jpg",
-      "quantity": 1
+      "quantity": 1,
+      "description": "Satisfaction Guaranteed. Return or exchange any order within 30 days.Designed and sold by Hafeez Center in the United States. Satisfaction Guaranteed. Return or exchange any order within 30",
+      "sizes": ["M", "L", "SM", "XL"]
     },
     {
       "id": 3,
       "title": "Round Neck T-Shirt",
       "price": 27,
       "img": "https://loopinfosol.in/themeforest/ekka-html-v31/ekka-html/assets/images/product-image/1_1.jpg",
-      "quantity": 1
+      "quantity": 1,
+      "description": "Satisfaction Guaranteed. Return or exchange any order within 30 days.Designed and sold by Hafeez Center in the United States. Satisfaction Guaranteed. Return or exchange any order within 30",
+      "sizes": ["M", "L", "SM", "XL"],
+      "allimages": [
+        "https://loopinfosol.in/themeforest/ekka-html-v31/ekka-html/assets/images/product-image/1_2.jpg",
+        "https://loopinfosol.in/themeforest/ekka-html-v31/ekka-html/assets/images/product-image/5_1.jpg",
+        "https://loopinfosol.in/themeforest/ekka-html-v31/ekka-html/assets/images/product-image/4_1.jpg"
+      ]
     },
     {
       "id": 5,
       "title": "Round Neck T-Shirt",
       "price": 27,
       "img": "https://loopinfosol.in/themeforest/ekka-html-v31/ekka-html/assets/images/product-image/2_1.jpg",
-      "quantity": 1
+      "quantity": 1,
+      "description": "Satisfaction Guaranteed. Return or exchange any order within 30 days.Designed and sold by Hafeez Center in the United States. Satisfaction Guaranteed. Return or exchange any order within 30",
+      "sizes": ["M", "L", "SM", "XL"]
     },
     {
       "id": 6,
       "title": "Round Neck T-Shirt",
       "price": 27,
       "img": "https://loopinfosol.in/themeforest/ekka-html-v31/ekka-html/assets/images/product-image/2_1.jpg",
-      "quantity": 1
+      "quantity": 1,
+      "description": "Satisfaction Guaranteed. Return or exchange any order within 30 days.Designed and sold by Hafeez Center in the United States. Satisfaction Guaranteed. Return or exchange any order within 30",
+      "sizes": ["M", "L", "SM", "XL"]
     },
     {
       "id": 7,
       "title": "Round Neck T-Shirt",
       "price": 27,
       "img": "https://loopinfosol.in/themeforest/ekka-html-v31/ekka-html/assets/images/product-image/3_1.jpg",
-      "quantity": 1
+      "quantity": 1,
+      "description": "Satisfaction Guaranteed. Return or exchange any order within 30 days.Designed and sold by Hafeez Center in the United States. Satisfaction Guaranteed. Return or exchange any order within 30",
+      "sizes": ["M", "L", "SM", "XL"]
     },
     {
       "id": 8,
       "title": "Round Neck T-Shirt",
       "price": 27,
       "img": "https://loopinfosol.in/themeforest/ekka-html-v31/ekka-html/assets/images/product-image/4_1.jpg",
-      "quantity": 1
+      "quantity": 1,
+      "description": "Satisfaction Guaranteed. Return or exchange any order within 30 days.Designed and sold by Hafeez Center in the United States. Satisfaction Guaranteed. Return or exchange any order within 30",
+      "sizes": ["M", "L", "SM", "XL"]
     },
     {
       "id": 9,
       "title": "Round Neck T-Shirt",
       "price": 27,
       "img": "https://loopinfosol.in/themeforest/ekka-html-v31/ekka-html/assets/images/product-image/5_1.jpg",
-      "quantity": 1
+      "quantity": 1,
+      "description": "Satisfaction Guaranteed. Return or exchange any order within 30 days.Designed and sold by Hafeez Center in the United States. Satisfaction Guaranteed. Return or exchange any order within 30",
+      "sizes": ["M", "L", "SM", "XL"]
     },
     {
       "id": 10,
       "title": "Round Neck T-Shirt",
       "price": 27,
       "img": "https://loopinfosol.in/themeforest/ekka-html-v31/ekka-html/assets/images/product-image/1_2.jpg",
-      "quantity": 1
+
+      "quantity": 1,
+      "description": "Satisfaction Guaranteed. Return or exchange any order within 30 days.Designed and sold by Hafeez Center in the United States. Satisfaction Guaranteed. Return or exchange any order within 30",
+      "sizes": ["M", "L", "SM", "XL"]
     }
   ],
   "women": [
@@ -224,7 +339,6 @@
       "quantity": 1,
       "category": "women"
     },
-
     {
       "id": 11,
       "title": "Round Neck T-Shirt",
@@ -341,6 +455,160 @@
       "name": "Mahmoud Mohamed",
       "descrip": "Lorem, ipsum dolor sit amet consectetur  elit.",
       "respons": "GeneralManger"
+    }
+  ],
+  "api": [
+    {
+      "page": 1,
+      "per_page": 6,
+      "total": 10,
+      "total_pages": 3,
+      "data": [
+        {
+          "id": 1,
+          "title": "Full Sleeve Shirt",
+          "price": 27,
+          "img": "https://fzi4k1gk2dw3t0fqy18sw8qi-wpengine.netdna-ssl.com/wp-content/uploads/2013/08/278453-0012_1-510x649.jpeg",
+          "quantity": 1,
+          "category": "women"
+        },
+        {
+          "id": 2,
+          "title": "Cute Baby Toy's",
+          "price": 27,
+          "img": "https://fzi4k1gk2dw3t0fqy18sw8qi-wpengine.netdna-ssl.com/wp-content/uploads/2013/08/258836-0426_1.jpeg",
+          "quantity": 1,
+          "category": "women"
+        },
+        {
+          "id": 3,
+          "title": "Jumbo Carry Bag",
+          "price": 27,
+          "img": "https://fzi4k1gk2dw3t0fqy18sw8qi-wpengine.netdna-ssl.com/wp-content/uploads/2013/08/589864-5295_1.jpeg",
+          "quantity": 1,
+          "category": "women"
+        },
+        {
+          "id": 11,
+          "title": "Designer Leather Purses",
+          "price": 27,
+          "img": "https://fzi4k1gk2dw3t0fqy18sw8qi-wpengine.netdna-ssl.com/wp-content/uploads/2013/08/278453-0012_1-510x649.jpeg",
+          "quantity": 1,
+          "category": "men"
+        },
+        {
+          "id": 12,
+          "title": "Canvas Cowboy Hat",
+          "price": 27,
+          "img": "https://fzi4k1gk2dw3t0fqy18sw8qi-wpengine.netdna-ssl.com/wp-content/uploads/2013/08/278453-0012_1-510x649.jpeg",
+          "quantity": 1,
+          "category": "men"
+        },
+        {
+          "id": 13,
+          "title": "Digital Smart Watches",
+          "price": 27,
+          "img": "https://cdn.shopify.com/s/files/1/0551/8001/products/red_atlanta_georgia_logo_sweatshirt_1_beff9798-ef5a-4ba8-bd9e-6dc32447eb6b_420x530_crop_center.jpg?v=1611842115",
+          "quantity": 1,
+          "category": "men"
+        },
+        {
+          "id": 14,
+          "title": "Round Neck T-Shirt",
+          "price": 27,
+          "img": "https://cdn.shopify.com/s/files/1/0551/8001/products/red_atlanta_georgia_logo_sweatshirt_1_beff9798-ef5a-4ba8-bd9e-6dc32447eb6b_420x530_crop_center.jpg?v=1611842115",
+          "quantity": 1,
+          "category": "men"
+        },
+        {
+          "id": 19,
+          "title": "Leather Belt for Men",
+          "price": 27,
+          "img": "https://cdn.shopify.com/s/files/1/0551/8001/products/red_atlanta_georgia_logo_sweatshirt_1_beff9798-ef5a-4ba8-bd9e-6dc32447eb6b_420x530_crop_center.jpg?v=1611842115",
+          "quantity": 1,
+          "category": "men"
+        }
+      ],
+      "support": {
+        "url": "https://reqres.in/#support-heading",
+        "text": "To keep ReqRes free, contributions towards server costs are appreciated!"
+      }
+    },
+    {
+      "page": 2,
+      "per_page": 6,
+      "total": 12,
+      "total_pages": 3,
+      "data": [
+        {
+          "id": 11,
+          "title": "Round Neck T-Shirt",
+          "price": 27,
+          "img": "https://cdn.shopify.com/s/files/1/0551/8001/products/blue_overdyed_munich_logo_t_shirt_1_75a48775-5bf9-4d1e-b0e2-fd4210e87538_420x530_crop_center.jpg?v=1611842026",
+          "quantity": 1,
+          "category": "men"
+        },
+        {
+          "id": 12,
+          "title": "Round Neck T-Shirt",
+          "price": 27,
+          "img": "https://cdn.shopify.com/s/files/1/0551/8001/products/khaki_hooded_puffer_jacket_1_7e46e7f6-0aa6-4d44-8020-ea82df61a87c_420x530_crop_center.jpg?v=1611842054",
+          "quantity": 1,
+          "category": "men"
+        },
+        {
+          "id": 13,
+          "title": "Round Neck T-Shirt",
+          "price": 27,
+          "img": "https://cdn.shopify.com/s/files/1/0551/8001/products/red_atlanta_georgia_logo_sweatshirt_1_beff9798-ef5a-4ba8-bd9e-6dc32447eb6b_420x530_crop_center.jpg?v=1611842115",
+          "quantity": 1,
+          "category": "men"
+        },
+        {
+          "id": 14,
+          "title": "Round Neck T-Shirt",
+          "price": 27,
+          "img": "https://loopinfosol.in/themeforest/ekka-html-v31/ekka-html/assets/images/product-image/2_1.jpg",
+          "quantity": 1,
+          "category": "men"
+        },
+        {
+          "id": 15,
+          "title": "Round Neck T-Shirt",
+          "price": 27,
+          "img": "https://cdn.shopify.com/s/files/1/0551/8001/products/black_canvas_stripe_sole_trainer_1_064e417e-408b-4549-b55f-d9135624eaca_420x530_crop_center.jpg?v=1645532164",
+          "quantity": 1,
+          "category": "men"
+        },
+        {
+          "id": 16,
+          "title": "Round Neck T-Shirt",
+          "price": 27,
+          "img": "https://loopinfosol.in/themeforest/ekka-html-v31/ekka-html/assets/images/product-image/3_1.jpg",
+          "quantity": 1,
+          "category": "men"
+        },
+        {
+          "id": 17,
+          "title": "Round Neck T-Shirt",
+          "price": 27,
+          "img": "https://loopinfosol.in/themeforest/ekka-html-v31/ekka-html/assets/images/product-image/4_1.jpg",
+          "quantity": 1,
+          "category": "men"
+        },
+        {
+          "id": 18,
+          "title": "Round Neck T-Shirt",
+          "price": 27,
+          "img": "https://loopinfosol.in/themeforest/ekka-html-v31/ekka-html/assets/images/product-image/5_1.jpg",
+          "quantity": 1,
+          "category": "men"
+        }
+      ],
+      "support": {
+        "url": "https://reqres.in/#support-heading",
+        "text": "To keep ReqRes free, contributions towards server costs are appreciated!"
+      }
     }
   ]
 }

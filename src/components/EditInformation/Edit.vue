@@ -5,7 +5,9 @@
         <div class="mt-5">
           <div class="text-center mb-2">
             <h3>
-              <strong>{{ currentRouteName }}</strong>
+              <strong class="text-black text-uppercase">{{
+                currentRouteName
+              }}</strong>
             </h3>
             <p>Best place to buy and sell digital products</p>
           </div>
@@ -14,9 +16,9 @@
       <div class="form-sitation">
         <form class="">
           <div
-            class="system d-flex flex-row gap-5 flex-lg-row flex-md-column justify-content-between"
+            class="system d-flex flex-column gap-2 flex-md-column justify-content-between"
           >
-            <div class="mb-3 position-relative">
+            <div class="mb-3 w-100 position-relative">
               <Transition>
                 <span class="error" v-if="v$.username.$error">
                   Should Write UserName !!
@@ -25,19 +27,18 @@
               <label
                 for="username"
                 class="form-label text-black text-uppercase fw-bold"
-                >User Name</label
+                >User Name:</label
               >
               <input
                 v-model="register.username"
-                type="email"
+                type="text"
                 class="form-control"
                 id="username"
-                aria-describedby="emailHelp"
               />
               <div id="emailHelp" class="form-text"></div>
             </div>
 
-            <div class="mb-3 position-relative">
+            <div class="mb-3 w-100 position-relative">
               <Transition>
                 <span class="error" v-if="v$.lastName.$error">
                   Should Write lastName !!
@@ -46,7 +47,7 @@
               <label
                 for="LastName"
                 class="form-label text-black text-uppercase fw-bold"
-                >LastName</label
+                >LastName:</label
               >
               <input
                 v-model="register.lastName"
@@ -59,8 +60,8 @@
             </div>
           </div>
 
-          <div class="system d-flex flex-row gap-5 justify-content-between">
-            <div class="mb-3 position-relative">
+          <div class="system d-flex flex-column gap-2 justify-content-between">
+            <div class="mb-3 w-100 position-relative">
               <Transition>
                 <span class="error" v-if="v$.email.$error">
                   Should Write email !!
@@ -80,7 +81,7 @@
               />
               <div id="emailHelp" class="form-text"></div>
             </div>
-            <div class="mb-3 position-relative">
+            <div class="mb-3 w-100 position-relative">
               <Transition>
                 <span class="error" v-if="v$.password.$error">
                   Should Write password !!
@@ -101,8 +102,8 @@
               <div id="emailHelp" class="form-text"></div>
             </div>
           </div>
-          <div class="system d-flex flex-row gap-5 justify-content-between">
-            <div class="mb-3 position-relative">
+          <div class="system d-flex flex-column gap-2 justify-content-between">
+            <div class="mb-3 w-100 position-relative">
               <Transition>
                 <span class="error" v-if="v$.address.$error">
                   Should Write address !!
@@ -122,7 +123,7 @@
               />
               <div id="emailHelp" class="form-text"></div>
             </div>
-            <div class="mb-3 position-relative">
+            <div class="mb-3 w-100 position-relative">
               <Transition>
                 <span class="error" v-if="v$.phone.$error">
                   Should Write phone !!
@@ -135,7 +136,7 @@
               >
               <input
                 v-model="register.phone"
-                type="text"
+                type="password"
                 class="form-control"
                 id="phone"
                 aria-describedby="emailHelp"
@@ -143,9 +144,9 @@
               <div id="emailHelp" class="form-text"></div>
             </div>
           </div>
-          <label class="text-black text-uppercase fw-bold mb-2">country:</label>
+          <label class="mb-2 text-black text-uppercase fw-bold">Country</label>
           <select
-            v-model="register.country"
+            v-model="register.select"
             class="form-select form-select-lg mb-3"
             aria-label=".form-select-lg example"
           >
@@ -155,7 +156,7 @@
             <option value="Mansoura">Mansoura</option>
           </select>
           <div class="d-flex flex-row justify-content-center">
-            <button @click="signUp" type="submit" class="btn btn-primary">
+            <button @click="signUp()" type="submit" class="btn-custome">
               Submit
             </button>
           </div>
@@ -180,7 +181,8 @@ export default {
       lastName: "",
       address: "",
       phone: "",
-      country: "",
+      id: "",
+      countray: "",
     });
     const rules = computed(() => {
       return {
@@ -190,7 +192,7 @@ export default {
         lastName: { required, minLength: minLength(0, 6) },
         address: { required },
         phone: { required, minLength: minLength(0, 10) },
-        country: { required },
+        countray: { required },
       };
     });
     const v$ = useValidate(rules, register);
@@ -206,15 +208,16 @@ export default {
       this.v$.$validate();
       if (!this.v$.$error) {
         console.log("form validation");
-        let result = await axios.post("users", {
+        let result = await axios.put(`users/${this.register.id}`, {
           email: this.register.email,
           password: this.register.password,
           username: this.register.username,
           lastName: this.register.lastName,
           address: this.register.address,
           phone: this.register.phone,
-          country: this.register.country,
+          countray: this.register.countray,
         });
+        console.log(result.data);
         if (result.status == 200) {
           localStorage.setItem("user-info", JSON.stringify(result.data));
           this.redirTo({ val: "/" });
@@ -229,12 +232,21 @@ export default {
       return this.$route.name;
     },
   },
+  mounted() {
+    let user = localStorage.getItem("user-info");
+    if (user) {
+      this.register.id = JSON.parse(user).id;
+      console.log(this.register.id);
+    } else {
+      this.redirTo({ val: "/" });
+    }
+  },
 };
 </script>
 <style scoped>
 .form-sitation {
-  border: 1px solid #ededed;
-  width: 50%;
+  border: 4px dashed black;
+  width: 100%;
   margin: auto;
   padding: 30px;
   border-radius: 3px;
@@ -283,13 +295,20 @@ select {
   color: red;
   right: 0;
 }
-.btn.btn-primary {
+.btn-custome {
   font-size: 16px;
   width: 150px;
   margin-top: 15px;
   height: 44px;
-  min-width: unset;
-  background: #0b5ed7;
+  background: white;
+  color: black;
+  border: 3px dotted black;
+  transition: 0.3s ease-in-out;
+}
+.btn-custome:hover {
+  border: 3px dotted white;
+  background: black;
+  color: white;
 }
 /* we will explain what these classes do next! */
 .v-enter-active,

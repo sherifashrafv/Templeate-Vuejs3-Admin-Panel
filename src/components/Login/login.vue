@@ -98,7 +98,7 @@ export default {
         );
         if (result.status == 200 && result.data.length > 0) {
           localStorage.setItem("user-info", JSON.stringify(result.data[0]));
-          this.redirTo({ val: "home" });
+          this.redirTo({ val: "/" });
         }
       } else {
         console.log("notvalidate");

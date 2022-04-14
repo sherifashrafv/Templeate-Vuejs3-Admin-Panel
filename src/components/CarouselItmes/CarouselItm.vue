@@ -95,7 +95,7 @@
         <div class="titles-carousel-items">
           <h3 class="title m-0 p-0 text-black">{{ $t("limted") }}</h3>
         </div>
-        <div class="swipper-carousel-items mt-3">
+        <div class="swipper-carousel-items-2 mt-3">
           <swiper :modules="modules" class="mySwiper position-relative">
             <swiper-slide v-for="prod in colection.slice(2, 5)" :key="prod.id">
               <div
@@ -189,7 +189,7 @@
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { mapState } from "vuex";
 import StarRating from "vue-star-rating";
-
+import gsap from "gsap";
 // Import Swiper styles
 import "swiper/css";
 
@@ -241,7 +241,6 @@ export default {
     };
   },
   mounted() {
-    moment().format();
     this.setDiff();
     setInterval(this.updateDiff, 1000);
     axios
@@ -252,11 +251,11 @@ export default {
       .finally(() => {
         this.loading = false;
       });
+    gsap.to("#swiperAnimation", { duration: 2.5, ease: "steps(12)", y: -500 });
   },
   computed: {
     ...mapState(["colection"]),
   },
-  // All slick methods can be used too, example here
 };
 </script>
 <style scoped>

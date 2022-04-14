@@ -81,7 +81,9 @@ export default {
       })
       .catch((error) => console.log(error))
       .finally(() => {
-        this.loading = false;
+        setTimeout(() => {
+          this.loading = false;
+        }, 700);
       });
   },
   computed: {

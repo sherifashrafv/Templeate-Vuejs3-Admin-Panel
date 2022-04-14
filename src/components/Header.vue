@@ -83,54 +83,6 @@
                 </div>
               </li>
               <li>
-                <button
-                  type="button"
-                  class="modal-shoopping query"
-                  data-bs-toggle="modal"
-                  data-bs-target="#exampleModal"
-                >
-                  <img src="/img/shopping-bag.83beee9f.png" alt="" /><span
-                    class="basket-cart-num"
-                    >0</span
-                  ></button
-                ><!-- Modal -->
-                <div
-                  class="modal fade"
-                  id="exampleModal"
-                  tabindex="-1"
-                  aria-labelledby="exampleModalLabel"
-                  aria-hidden="true"
-                >
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">
-                          My Cart
-                        </h5>
-                        <button
-                          type="button"
-                          class="btn-close"
-                          data-bs-dismiss="modal"
-                          aria-label="Close"
-                        ></button>
-                      </div>
-                      <div class="modal-body"></div>
-                      <div class="modal-footer">
-                        <button
-                          type="button"
-                          class="btn btn-secondary"
-                          data-bs-dismiss="modal"
-                        >
-                          Close</button
-                        ><button type="button" class="btn btn-primary">
-                          Save changes
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li>
                 <div class="dropdown">
                   <button
                     class="btn btn-secondary dropdown-toggle"
@@ -157,20 +109,33 @@
                   </ul>
                 </div>
               </li>
-              <li class="menu">
+
+              <!-- start-shopping-cart -->
+              <li>
+                <router-link to="shoppingCart" class="position-relative">
+                  <img
+                    src="../../public/Images/Header/shopping-bag.png"
+                    alt=""
+                  />
+                  <span class="basket-cart-num">
+                    {{ basketCart.length }}
+                  </span>
+                </router-link>
+              </li>
+              <li>
+                <!-- Button trigger modal -->
                 <button
                   type="button"
-                  class="modal-shoopping query"
+                  class="btn btn-primary"
                   data-bs-toggle="modal"
                   data-bs-target="#exampleModal"
                 >
-                  <img
-                    src="../../public/Images/Header/menu.png"
-                    alt=""
-                  /></button
-                ><!-- Modal -->
+                  <img src="../../public/Images/Header/menu.png" alt="" />
+                </button>
+
+                <!-- Modal -->
                 <div
-                  class="modal fade"
+                  class="side-bar-custome modal fade"
                   id="exampleModal"
                   tabindex="-1"
                   aria-labelledby="exampleModalLabel"
@@ -180,7 +145,7 @@
                     <div class="modal-content">
                       <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalLabel">
-                          My Cart
+                          My Menu
                         </h5>
                         <button
                           type="button"
@@ -189,59 +154,78 @@
                           aria-label="Close"
                         ></button>
                       </div>
-                      <div class="modal-body"></div>
-                      <div class="modal-footer">
-                        <button
-                          type="button"
-                          class="btn btn-secondary"
-                          data-bs-dismiss="modal"
+                      <div class="modal-body">
+                        <ul
+                          class="list-unstyled justify-content-center d-flex gap-5 flex-column"
                         >
-                          Close</button
-                        ><button type="button" class="btn btn-primary">
-                          Save changes
-                        </button>
+                          <li v-for="(link, i) in $tm('navLinks')" :key="i">
+                            <router-link
+                              :class="[
+                                isActive && 'router-link-active',
+                                isExactActive && 'router-link-exact-active',
+                              ]"
+                              :to="link.Path"
+                            >
+                              {{ link.title }}
+                            </router-link>
+                          </li>
+                          <li>
+                            <div class="dropdown languages">
+                              <button
+                                class="btn btn-secondary lang-button text-muted dropdown-toggle"
+                                type="button"
+                                id="dropdownMenuButton1"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false"
+                              >
+                                {{ $t("languages.title") }}
+                              </button>
+                              <ul
+                                class="dropdown-menu custome p-2"
+                                aria-labelledby="dropdownMenuButton1"
+                              >
+                                <li>
+                                  <a
+                                    @click="change('en')"
+                                    class="dropdown-item"
+                                    >{{ $t("languages.english") }}</a
+                                  >
+                                </li>
+                                <li>
+                                  <a
+                                    @click="change('ar')"
+                                    class="dropdown-item"
+                                    >{{ $t("languages.arabic") }}</a
+                                  >
+                                </li>
+                              </ul>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="modal-footer justify-content-center">
+                        <ul
+                          class="d-flex list-unstyled flex-row justify-content-between gap-2 links-icons"
+                        >
+                          <li><i class="fa-brands fa-facebook"></i></li>
+                          <li><i class="fa-brands fa-twitter"></i></li>
+                          <li><i class="fa-brands fa-instagram"></i></li>
+                          <li><i class="fa-brands fa-linkedin-in"></i></li>
+                        </ul>
                       </div>
                     </div>
                   </div>
                 </div>
-                <!-- End Drawer Style Right Modal --><!-- <div class="dropdown">
-                  <button
-                    class="btn btn-secondary dropdown-toggle"
-                    type="button"
-                    id="dropdownMenuButton1"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    <img
-                      src="../../public/Images/Header/shopping-bag.png"
-                      alt=""
-                    />
-                    <span class="basket-cart"
-                      ><strong>{{ basketCart.length }}</strong></span
-                    >
-                  </button>
-                  <ul
-                    class="dropdown-menu"
-                    aria-labelledby="dropdownMenuButton1"
-                  >
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li>
-                      <a class="dropdown-item" href="#">Another action</a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#">Something else here</a>
-                    </li>
-                  </ul>
-                </div> -->
               </li>
+              <!-- end-shopping-cart -->
             </ul>
           </div>
         </div>
       </div>
     </div>
-    <!-- end-icons -->
+    <!-- END-icons-media-queries-->
 
-    <!-- nab-bar-2 -->
+    <!-- MAIN-MEDIA-QUIRES start-icons-media-queries -->
     <div class="section-2 border-bottom pb-4">
       <div class="container-lg container-fluid-md mt-4">
         <div
@@ -269,7 +253,7 @@
             <ul
               class="shopy-icons list-unstyled align-items-center d-flex flex-row gap-4 justify-content-between m-0"
             >
-              <li>
+              <li v-if="user">
                 <div class="dropdown">
                   <button
                     class="btn btn-secondary dropdown-toggle"
@@ -284,7 +268,6 @@
                     class="dropdown-menu"
                     aria-labelledby="dropdownMenuButton1"
                   >
-                    <!-- start-user-found -->
                     <li>
                       <router-link to="/Settings" class="dropdown-item"
                         >Settings</router-link
@@ -300,10 +283,30 @@
                     <li>
                       <a class="dropdown-item" @click="logOut()">LogOut</a>
                     </li>
+                  </ul>
+                </div>
+              </li>
+              <li v-else>
+                <div class="dropdown">
+                  <button
+                    class="btn btn-secondary dropdown-toggle"
+                    type="button"
+                    id="dropdownMenuButton1"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <img src="../../public/Images/Header/avatar.png" alt="" />
+                  </button>
+                  <!-- start-user-found -->
+
+                  <ul
+                    class="dropdown-menu"
+                    aria-labelledby="dropdownMenuButton1"
+                  >
                     <!-- end-user-found -->
 
                     <!-- User-not-Found -->
-                    <!-- <li>
+                    <li>
                       <router-link class="dropdown-item" to="/Register"
                         >Register</router-link
                       >
@@ -315,43 +318,41 @@
                     </li>
                     <li>
                       <a class="dropdown-item" href="#">Something else here</a>
-                    </li> -->
+                    </li>
                     <!-- User-not-Found-End -->
                   </ul>
                 </div>
               </li>
-
-              <li>
-                <!-- Button trigger modal -->
-                <!-- Drawer Style Right Modal -->
-                <!-- modal-shoopping -->
-                <!-- Button trigger modal -->
+              <!-- start-shopping-cart -->
+              <li class="basket-cart">
                 <button
                   type="button"
-                  class="modal-shoopping"
+                  class="btn btn-primary position-relative"
                   data-bs-toggle="modal"
-                  data-bs-target="#exampleModal"
+                  data-bs-target="#exampleModalLive"
                 >
                   <img
                     src="../../public/Images/Header/shopping-bag.png"
                     alt=""
                   />
-                  <span class="basket-cart-num">{{ basketCart.length }}</span>
+                  <span class="basket-cart-num">
+                    {{ basketCart.length }}
+                  </span>
                 </button>
 
-                <!-- Modal -->
                 <div
                   class="modal fade"
-                  id="exampleModal"
+                  id="exampleModalLive"
                   tabindex="-1"
-                  aria-labelledby="exampleModalLabel"
+                  aria-labelledby="exampleModalLiveLabel"
+                  style="display: none"
                   aria-hidden="true"
                 >
                   <div class="modal-dialog">
                     <div class="modal-content">
                       <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">
-                          My Cart
+                        <h5 class="modal-title" id="exampleModalLiveLabel">
+                          Shopping-Cart
                         </h5>
                         <button
                           type="button"
@@ -360,17 +361,80 @@
                           aria-label="Close"
                         ></button>
                       </div>
-                      <div class="modal-body">
+                      <!-- EMPTY-CART -->
+                      <div v-if="basketCart.length === 0">
                         <div
-                          class="basket-cart-products d-flex align-items-center flex-row"
-                          v-for="prod in basketCart"
-                          :key="prod.id"
+                          class="cart-empty d-flex flex-column align-items-center justify-content-center"
                         >
-                          <div class="prod-image">
-                            <img :src="prod.img" alt="" />
+                          <p>Your cart is empty!</p>
+                        </div>
+                      </div>
+                      <!-- END-EMPTY-CART -->
+                      <!--  -->
+                      <!-- BASKET-CART-IN -->
+                      <div
+                        v-else
+                        v-for="(cart, index) in basketCart"
+                        :key="cart.id"
+                        class="modal-body mb-2 pb-3"
+                      >
+                        <div
+                          class="d-flex flex-row align-items-center gap-2 border-bottom pb-2"
+                        >
+                          <div class="cartIn-image">
+                            <img class="img-fluid" :src="cart.img" alt="" />
+                          </div>
+                          <div
+                            class="desc-car d-flex flex-column align-items-start"
+                          >
+                            <h4>{{ cart.title }}</h4>
+                            <h4>{{ $t("currency") }} {{ cart.price }}</h4>
+                            <!-- Quantity-->
+                            <div
+                              class="quantity d-flex flex-row justify-content-between"
+                            >
+                              <div
+                                role="button"
+                                @click="aQuantity(cart.id)"
+                                class="border-end"
+                              >
+                                +
+                              </div>
+                              <div>{{ cart.quantity }}</div>
+                              <div
+                                role="button"
+                                @click="rQuantity(cart.id, index)"
+                                class="border-start"
+                              >
+                                -
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
+                      <!-- BASKET-CART-IN ENDDD -->
+
+                      <!-- START-Tottal-Price -->
+                      <span v-if="basketCart.length === 0"></span>
+                      <div
+                        v-else
+                        class="p-4 d-flex flex-row justify-content-between"
+                      >
+                        <div>
+                          <h2>Total:</h2>
+                        </div>
+                        <div>
+                          <p class="text-black fw-bold fs-3 text">
+                            {{
+                              $t("currency") +
+                              Number(totalCount).toLocaleString()
+                            }}
+                          </p>
+                        </div>
+                      </div>
+                      <!-- End-Tottal-Price -->
+
+                      <!-- madal-footer -->
                       <div class="modal-footer">
                         <button
                           type="button"
@@ -383,41 +447,12 @@
                           Save changes
                         </button>
                       </div>
+                      <!-- End-Footer -->
                     </div>
                   </div>
                 </div>
-                <!-- End Drawer Style Right Modal -->
-
-                <!-- <div class="dropdown">
-                  <button
-                    class="btn btn-secondary dropdown-toggle"
-                    type="button"
-                    id="dropdownMenuButton1"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    <img
-                      src="../../public/Images/Header/shopping-bag.png"
-                      alt=""
-                    />
-                    <span class="basket-cart"
-                      ><strong>{{ basketCart.length }}</strong></span
-                    >
-                  </button>
-                  <ul
-                    class="dropdown-menu"
-                    aria-labelledby="dropdownMenuButton1"
-                  >
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li>
-                      <a class="dropdown-item" href="#">Another action</a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#">Something else here</a>
-                    </li>
-                  </ul>
-                </div> -->
               </li>
+              <!-- end-shopping-cart -->
 
               <li>
                 <div class="dropdown">
@@ -471,7 +506,7 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapState, mapActions } from "vuex";
 import { ref } from "vue";
 export default {
   name: "Header-view",
@@ -479,13 +514,23 @@ export default {
     const lan = localStorage.getItem("lang");
     const lang = ref(lan);
     const search = ref("");
-    const user = ref(false);
+    const user = ref(true);
     return { lang, search, user };
   },
   computed: {
-    ...mapState(["basketCart"]),
+    ...mapState(["basketCart", "dataCart"]),
+
+    totalCount() {
+      let totalPrice = 0;
+      this.basketCart.forEach((pr) => {
+        totalPrice += parseInt(pr.price) * parseInt(pr.quantity);
+      });
+      return totalPrice;
+    },
   },
   methods: {
+    ...mapActions(["removeProduct", "addQuantity", "removeQuantity"]),
+
     searchVl() {
       localStorage.setItem("search-value", JSON.stringify(this.search));
     },
@@ -500,11 +545,23 @@ export default {
         params: { lang: event },
       });
     },
+    aQuantity(idx) {
+      this.addQuantity(idx);
+    },
+    rQuantity(idx, index) {
+      this.removeQuantity({ idx, index });
+    },
   },
   mounted() {
     window.addEventListener("scroll", this.onScroll);
     let lang = localStorage.getItem("lang");
     let user = localStorage.getItem("user-info");
+    if (!user) {
+      this.user = false;
+      console.log("mfesh");
+    } else {
+      this.user = true;
+    }
     console.log(lang);
     if (!lang) localStorage.setItem("lang", this.$i18n.locale);
     //section added :
@@ -516,15 +573,11 @@ export default {
       }
       this.$i18n.locale = lang;
     }
-    if (!user) {
-      console.log("user");
-    } else {
-      console.log("not-found");
-    }
   },
   beforeUnmount() {
     window.removeEventListener("scroll", this.onScroll);
   },
+  components: {},
 };
 </script>
 <style scoped>
@@ -551,9 +604,29 @@ button#dropdownMenuButton1 {
   text-align: center;
 }
 .shopy-icons div button img,
-button.modal-shoopping img {
+button.modal-shoopping img,
+.basket-cart button img,
+.shopy-icons-div li a img,
+.shopy-icons li img {
   max-width: 28px;
   border: none;
+}
+.shopy-icons li button:not(.btn-close) {
+  background: none !important;
+  border: none;
+  box-shadow: none;
+}
+.lang-button {
+  padding: 0 !important;
+}
+.shopy-icons-div li a .basket-cart-num {
+  transform: translate(26%, 45%);
+  left: 0;
+}
+.basket-cart > button {
+  background: none;
+  border: none;
+  box-shadow: none !important;
 }
 .shopy-icons div button::after {
   display: none;
@@ -639,6 +712,7 @@ a {
 }
 .modal-content {
   height: 100vh;
+  justify-content: space-between;
 }
 .modal.fade {
   transition: 0.3s ease-in-out;
@@ -646,12 +720,48 @@ a {
 }
 .modal.fade.show {
   transform: translateX(0%) !important;
+  z-index: 99999999999999999999;
 }
 
+/* modal-side-bar */
+.side-bar-custome.modal.fade {
+  transform: translateX(-100%) !important;
+  z-index: 999999999999999 !important;
+  /* background: red !important; */
+}
+.side-bar-custome.modal.fade.modal {
+  overflow-y: clip !important;
+}
+.modal.fade.side-bar-custome.show {
+  transform: translateX(-46%) !important;
+  background: white !important;
+}
 .modal-shoopping {
   background: none;
   border: none;
   position: relative;
+}
+.modal-backdrop {
+  z-index: 1040 !important;
+}
+.modal-content {
+  margin: 2px auto;
+  z-index: 1100 !important;
+  overflow-y: scroll;
+}
+.modal-backdrop {
+  display: none;
+}
+.modal-body {
+  position: relative;
+  flex: 0 1 auto !important;
+  padding: 1rem;
+}
+.modal-footer {
+  border: none !important;
+}
+
+/* margin: 0 !important;
 }
 /* Modal Box */
 /* .right .modal-dialog,
@@ -679,8 +789,11 @@ a {
   max-width: 90px;
 }
 .quantity {
+  border: 1px solid #eeeeee;
   width: 100px;
   border: 1px solid #eeeeee;
+  padding: 8px 7px;
+  text-align: center;
 }
 .quantity > div {
   width: calc(100% / 3);
@@ -688,18 +801,7 @@ a {
 .prod-image img {
   width: 100px;
 }
-.modal-backdrop {
-  z-index: 1040 !important;
-}
-.modal-content {
-  margin: 2px auto;
-  z-index: 1100 !important;
-  overflow-y: scroll;
-}
-.modal-backdrop {
-  /* bug fix - no overlay */
-  display: none;
-}
+
 .dropdown.languages button {
   box-shadow: none;
   color: #555 !important;
@@ -723,7 +825,7 @@ a {
   position: absolute;
   top: 65%;
   transform: translate(-50%, -39%);
-  right: -28%;
+  right: 0%;
   background: #777777;
   color: white;
   border-radius: 50%;
@@ -738,6 +840,19 @@ a {
   gap: 1px;
 }
 
+.cartIn-image img {
+  width: 100px !important;
+}
+.cart-empty {
+  min-height: 664px;
+}
+.dropdown-menu {
+  transition: transform 0.3s ease-in-out !important;
+  transform: translate(0px, 47.5px) scale(1, 0) !important;
+}
+.dropdown-menu.show {
+  transform: translate(0px, 47.5px) scale(1, 1) !important;
+}
 /* // X-Small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
   .free-shopping {
